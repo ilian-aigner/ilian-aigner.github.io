@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/stabilize-assets.mjs",
     "preview": "astro preview",
     "check": "node scripts/check_site.mjs"
   },

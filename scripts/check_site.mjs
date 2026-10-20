@@ -9,6 +9,8 @@ for (const route of routes) {
   const file = htmlFor(route);
   if (!fs.existsSync(file)) throw new Error(`Missing route: ${route}`);
   const html = fs.readFileSync(file, 'utf8');
+  if (!html.includes('href="/_astro/Base.css"')) throw new Error(`Missing stable stylesheet: ${route}`);
+  if (/href="\/_astro\/Base\.[\w-]+\.css"/.test(html)) throw new Error(`Hashed stylesheet will break cached HTML: ${route}`);
   if (!/<h1\b/.test(html)) throw new Error(`Missing h1: ${route}`);
   if (!/rel="canonical"/.test(html)) throw new Error(`Missing canonical: ${route}`);
   if (!/application\/ld\+json/.test(html)) throw new Error(`Missing structured data: ${route}`);
@@ -29,8 +31,12 @@ for (const route of routes) {
     checks++;
   }
 }
-for (const item of ['404.html', 'robots.txt', 'sitemap-index.xml', 'ilian-aigner-cv.pdf', 'assets/images/social-preview.png']) {
+for (const item of ['404.html', 'robots.txt', 'sitemap-index.xml', 'ilian-aigner-cv.pdf', 'assets/images/social-preview.png', '_astro/Base.CVtFmUFJ.css']) {
   if (!fs.existsSync(path.join(root, item))) throw new Error(`Missing output: ${item}`);
+}
+const stylesheet = fs.readFileSync(path.join(root, '_astro', 'Base.css'), 'utf8');
+for (const match of stylesheet.matchAll(/url\((\/_astro\/[^)]+)\)/g)) {
+  if (!fs.existsSync(path.join(root, match[1]))) throw new Error(`Missing stable CSS asset: ${match[1]}`);
 }
 const home = fs.readFileSync(htmlFor('/'), 'utf8');
 const work = fs.readFileSync(htmlFor('/work/'), 'utf8');
