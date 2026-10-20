@@ -472,6 +472,14 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
   .story-hero .hero-intro{line-height:1.65;margin-bottom:18px}
   .story-hero .hero-photo>img{transform:translateY(-20px) scale(1.045);transform-origin:center top}
 }
+@media(max-width:350px) and (max-height:740px){
+  .story-hero .hero-copy{padding-top:10px;padding-bottom:7px}
+  .story-hero .hero-kicker{margin-bottom:11px}
+  .story-hero h1{margin-bottom:11px}
+  .story-hero .hero-intro{margin-bottom:12px}
+  .story-hero .hero-photo{overflow:hidden}
+  .story-hero .hero-photo>img{transform:translateY(-54px) scale(1.08)}
+}
 /* Make the invitation into the story a comfortable touch target. */
 @media(max-width:760px){
   .story-hero .hero-bottom{flex-wrap:wrap;gap:8px 14px}
