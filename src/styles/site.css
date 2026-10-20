@@ -570,7 +570,7 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 @keyframes menu-reveal{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 /* Real photographs punctuate the personal story without becoming proof of a coaching session. */
 .chapter-moment{width:min(100%,690px);margin:70px 0 0 auto}
-.chapter-moment img{width:100%;height:auto;aspect-ratio:1.25;object-fit:cover;object-position:center 42%;filter:saturate(.82) contrast(1.02)}
+.chapter-moment img{width:100%;height:auto;aspect-ratio:1.25;object-fit:cover;object-position:center 42%;filter:saturate(.9) sepia(.06) contrast(1.02)}
 .chapter-moment figcaption,.about-photo-diptych figcaption{border-top:1px solid var(--line);padding-top:12px;margin-top:11px;color:var(--muted);font-size:12px;line-height:1.5}
 .about-photo-diptych{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(15px,2vw,28px);align-items:end;padding:34px 0 85px;border-bottom:1px solid var(--line)}
 .about-photo-diptych figure{min-width:0;margin:0}
