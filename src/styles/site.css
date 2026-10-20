@@ -416,3 +416,6 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
   .story-hero .hero-bottom{flex-wrap:wrap;gap:8px 14px}
   .story-hero .hero-bottom a{display:inline-flex;align-items:center;justify-content:flex-end;min-height:44px;margin-left:auto;padding:8px 0 8px 10px;font-size:12px;font-weight:700;white-space:nowrap}
 }
+/* Keep the opening beat close to the first chapter without crowding the text. */
+.story-opening{padding-top:105px;padding-bottom:72px}
+@media(max-width:760px){.story-opening{padding-top:75px;padding-bottom:45px}}
