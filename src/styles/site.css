@@ -214,6 +214,10 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .about-next h2{font-size:clamp(58px,6vw,94px);margin:25px 0 0}
 .about-next>div:last-child{max-width:520px;padding-bottom:7px}
 .about-next>div:last-child p{font-size:19px;line-height:1.75;margin:0 0 30px}
+.about-next-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px}
+.about-next-link{display:inline-flex;align-items:center;gap:18px;min-height:49px;border-bottom:1px solid var(--amber);font-size:13px;font-weight:700}
+.about-next-link span{color:var(--amber)}
+.about-next-link:hover{color:var(--amber)}
 @media(max-width:1100px){.about-hero{min-height:0}.about-hero h1{font-size:clamp(64px,7.7vw,100px)}.about-hero-photo{height:540px}}
 @media(max-width:760px){.about-hero{display:block;padding-block:55px 35px}.about-hero-copy .section-label{margin-bottom:28px}.about-hero h1{font-size:clamp(59px,12.5vw,85px);margin-bottom:27px}.about-hero-copy>p:last-of-type{font-size:18px;max-width:600px}.about-hero-photo{height:min(118vw,600px)}.about-story{padding-bottom:35px}.about-chapter{display:block;padding:45px 0 66px}.about-chapter .section-label{margin:0 0 24px}.about-chapter h2{font-size:clamp(44px,10vw,65px);margin-bottom:25px}.about-chapter p:not(.section-label){font-size:16px}.about-next{display:block;padding:55px 0 90px}.about-next h2{font-size:clamp(48px,11vw,70px);margin-bottom:28px}.about-next>div:last-child p{font-size:17px}}
 @media(max-width:430px){.about-hero h1{font-size:clamp(56px,12vw,64px)}.about-hero-photo{height:410px}.about-chapter h2{font-size:clamp(42px,10.5vw,50px)}}
