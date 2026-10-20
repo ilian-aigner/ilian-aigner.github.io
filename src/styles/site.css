@@ -38,3 +38,35 @@
 body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 @media(max-width:1100px){.story-hero{min-height:640px}.story-hero .hero-photo{height:590px}.story-hero h1{font-size:10.8vw}.story-journey{grid-template-columns:110px 1fr;gap:40px}}
 @media(max-width:760px){.story-hero{min-height:0}.story-hero .hero-copy{padding:45px 0 20px}.story-hero h1{font-size:clamp(88px,20vw,140px)}.story-hero .hero-kicker{font-size:11px;margin-bottom:28px}.story-hero .hero-intro{font-size:15px}.story-hero .hero-photo{height:440px;margin:0 -10px;align-self:stretch}.story-hero .hero-photo>img{object-position:center 23%;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}.story-hero .hero-photo figcaption{justify-content:center;padding:20px 10px}.story-hero .hero-bottom{font-size:10px;align-items:center}.story-opening{padding:95px 0 55px}.story-opening>p:last-child{font-size:18px}.story-journey{display:block}.journey-spine{display:none}.story-chapter{padding:45px 0 65px}.story-chapter h2{font-size:clamp(46px,10vw,70px)}.chapter-copy p,.founder-copy p,.personal-note p{font-size:16px}.competition-proof{gap:20px;flex-wrap:wrap}.competition-proof span{font-size:11px}.founder-story{padding:55px 0 80px}.founder-heading h2{font-size:clamp(48px,11vw,75px);margin-bottom:35px}.founder-grid{display:flex;flex-direction:column-reverse;gap:25px}.strk-art{min-height:260px;width:100%;gap:30px}.strk-art .logo-panel{width:75%;max-width:380px}.personal-note{display:block;padding:45px 0 80px}.personal-note h2{margin:25px 0}.contact-choices{grid-template-columns:1fr;gap:0}.contact-choices strong{font-size:21px}.contact-section{padding-top:65px}.contact-intro{font-size:16px}}
+/* Three distinct acts on the work page: a brand, a result, and a principle. */
+.work-feature{padding:72px 0 85px}
+.work-feature .brand-showcase{min-height:430px}
+.work-feature-copy{display:grid;grid-template-columns:.7fr 1.3fr;gap:7vw;padding-top:52px;align-items:start}
+.work-feature-copy h2{font-size:clamp(54px,6vw,92px);margin:0}
+.work-feature-copy>div:last-child{max-width:690px}
+.work-feature-copy p:not(.eyebrow-number),.work-evidence-copy p,.work-conversation-grid p{font-size:17px;line-height:1.85}
+.work-feature-copy .inline-link,.work-evidence-copy .inline-link,.work-conversation-grid .inline-link{display:inline-block;margin-top:12px}
+.work-evidence,.work-conversation{border-top:1px solid var(--line);padding-top:32px;padding-bottom:100px}
+.work-evidence-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:7vw;align-items:end;margin-top:34px}
+.work-result strong{display:block;font:600 clamp(85px,11vw,160px)/.82 Archivo,Arial,sans-serif;letter-spacing:-.09em;white-space:nowrap}
+.work-result strong span{color:var(--amber)}
+.work-result p{font-size:14px;line-height:1.6;margin:32px 0 0;padding-left:8px;border-left:2px solid var(--amber)}
+.work-evidence-copy h2{font-size:clamp(52px,5.8vw,86px);margin-bottom:34px}
+.work-evidence-copy p{max-width:610px}
+.work-conversation-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:7vw;align-items:end;margin-top:36px}
+.work-conversation-grid h2{font-size:clamp(55px,6vw,92px);margin:0;max-width:760px}
+.work-conversation-grid h2 span{color:var(--amber)}
+.work-conversation-grid>div{max-width:560px}
+@media(max-width:900px){.work-evidence-grid,.work-conversation-grid{gap:35px}.work-result strong{font-size:clamp(75px,11vw,115px)}}
+@media(max-width:760px){.work-feature{padding:42px 0 65px}.work-feature .brand-showcase{min-height:285px}.work-feature-copy,.work-evidence-grid,.work-conversation-grid{display:block}.work-feature-copy{padding-top:34px}.work-feature-copy h2{margin-bottom:23px}.work-evidence,.work-conversation{padding:24px 0 75px}.work-evidence-grid,.work-conversation-grid{margin-top:25px}.work-result strong{font-size:clamp(75px,19vw,140px)}.work-result p{margin:20px 0 38px}.work-evidence-copy h2,.work-conversation-grid h2{font-size:clamp(51px,11vw,76px);margin-bottom:25px}.work-feature-copy p:not(.eyebrow-number),.work-evidence-copy p,.work-conversation-grid p{font-size:16px}}
+/* About is a personal route, not a résumé-tag inventory. */
+.about-places{padding:72px 0 110px;border-top:1px solid var(--line)}
+.about-places h2{font-size:clamp(58px,6.4vw,94px);margin:26px 0 75px}
+.about-places-grid{display:grid;grid-template-columns:1fr 1fr;gap:7vw;border-top:1px solid var(--line)}
+.about-places-grid>div{position:relative;padding:34px 0 55px;max-width:520px}
+.about-places-grid>div:before{content:"";position:absolute;width:11px;height:11px;top:-6px;left:0;background:var(--amber);border-radius:50%;box-shadow:0 0 0 5px var(--bg)}
+.about-places-grid span{font-size:13px;color:var(--amber)}
+.about-places-grid h3{font-size:clamp(54px,6vw,90px);margin:20px 0}
+.about-places-grid p{font-size:17px;line-height:1.8;max-width:460px}
+.about-aside{border-top:1px solid var(--line);padding-top:25px;font-size:14px;max-width:650px}
+@media(max-width:760px){.about-places{padding:45px 0 75px}.about-places h2{font-size:clamp(48px,11vw,70px);margin-bottom:46px}.about-places-grid{grid-template-columns:1fr;gap:0}.about-places-grid>div{padding-bottom:35px}.about-places-grid>div+div{border-top:1px solid var(--line)}.about-places-grid p{font-size:16px}.about-places-grid h3{font-size:clamp(54px,15vw,85px)}.about-aside{padding-top:23px}}
