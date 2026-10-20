@@ -106,7 +106,10 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .experience-proof-grid>div{border-top:1px solid var(--line);padding:24px 0 32px}
 .experience-proof-grid strong{font:600 clamp(45px,5.7vw,80px)/1 Archivo,Arial,sans-serif;letter-spacing:-.06em;color:var(--amber)}
 .experience-proof-grid p{font-size:15px;line-height:1.7;margin-top:20px}
-.experience-skills{border-top:1px solid var(--line);padding-top:24px;font-size:13px;line-height:1.8;max-width:1000px}
+.experience-capabilities{display:grid;grid-template-columns:1.3fr .7fr;gap:8vw;border-top:1px solid var(--line);padding-top:28px;margin-top:9px}
+.experience-capabilities span{display:block;color:var(--amber);font-size:12px;margin-bottom:12px}
+.experience-capabilities p{color:var(--text);font-size:16px;line-height:1.75;max-width:610px;margin:0}
+.experience-cv-link{display:inline-block;margin-top:42px}
 @media(max-width:760px){.experience-history{padding:45px 0 70px}.experience-history-intro{display:block}.experience-history-intro h2{font-size:clamp(52px,11vw,72px);margin:25px 0 0}.career-list{--rail:13px;margin-top:45px}.career-list:before{top:33px;bottom:55px}.career-list li{display:block;padding:22px 0 45px 42px}.career-list li:before{top:31px}.career-meta{margin-bottom:22px}.career-detail{padding-left:0}.career-detail h3{font-size:31px}.career-detail>p:not(.career-org){font-size:15px}.education-band{display:block;padding:38px 25px;margin-bottom:75px}.education-band h2{font-size:clamp(47px,11vw,70px)}.education-detail{margin-top:40px}.education-detail h3{font-size:30px}.experience-programs{display:block;padding-bottom:70px}.experience-programs h2{font-size:clamp(47px,11vw,66px);margin-bottom:42px}.experience-programs li{grid-template-columns:1fr;gap:9px}.experience-proof{padding:25px 0 70px}.experience-proof h2{font-size:clamp(48px,11vw,70px);margin-bottom:44px}.experience-proof-grid{grid-template-columns:1fr;gap:5px}.experience-proof-grid strong{font-size:clamp(52px,14vw,78px)}}
 @media(min-width:761px) and (max-width:900px){.education-band{grid-template-columns:1fr;gap:38px;padding:50px}.education-band h2{font-size:65px}.education-detail{max-width:650px}.experience-programs{grid-template-columns:1fr;gap:32px}.experience-programs h2{margin-bottom:10px}}
 .career-list:after{content:"";position:absolute;top:48px;bottom:52px;left:var(--rail);width:1px;background:var(--amber);transform:scaleY(var(--career-progress,0));transform-origin:top}
@@ -190,6 +193,7 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .experience-proof-grid>div:last-child strong{font-size:clamp(38px,4.3vw,61px);color:var(--text)}
 .experience-proof-grid>div:last-child p{max-width:360px}
 @media(max-width:760px){.experience-hero{padding-top:55px;padding-bottom:25px}.experience-hero h1{font-size:clamp(61px,12vw,80px)}.experience-history{padding-top:36px}.education-band{padding:48px 0;margin-bottom:75px}.experience-proof-grid{grid-template-columns:1fr;gap:5px}.experience-proof-grid>div:first-child strong{font-size:clamp(70px,18vw,90px)}.experience-proof-grid>div:last-child strong{font-size:clamp(42px,11vw,58px)}}
+@media(max-width:760px){.experience-capabilities{grid-template-columns:1fr;gap:25px;padding-top:25px}.experience-capabilities p{font-size:15px}.experience-cv-link{margin-top:35px}}
 /* Put the chronology, not a second display headline, within the first screen. */
 .experience-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);column-gap:6vw;align-items:end;padding-top:52px;padding-bottom:18px}
 .experience-hero .section-label{grid-column:1/-1;margin-bottom:23px}
