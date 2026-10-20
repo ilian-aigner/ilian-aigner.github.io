@@ -1,0 +1,17 @@
+{
+  "name": "ilian-aigner-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "node scripts/check_site.mjs"
+  },
+  "dependencies": {
+    "@fontsource/archivo": "^5.2.8",
+    "@fontsource/manrope": "^5.2.8",
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^7.4.1"
+  }
+}

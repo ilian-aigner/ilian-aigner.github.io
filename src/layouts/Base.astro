@@ -1,0 +1,97 @@
+---
+import '@fontsource/archivo/400.css';
+import '@fontsource/archivo/600.css';
+import '@fontsource/archivo/700.css';
+import '@fontsource/manrope/400.css';
+import '@fontsource/manrope/500.css';
+import '@fontsource/manrope/600.css';
+import '@fontsource/manrope/700.css';
+import '../styles/site.css';
+import profile from '../data/profile.json';
+
+interface Props {
+  title: string;
+  description: string;
+  kind?: 'home' | 'about' | 'page';
+  image?: string;
+}
+const { title, description, kind = 'page', image = '/assets/images/social-preview.png' } = Astro.props;
+const origin = Astro.site?.origin ?? 'https://ilian-aigner.github.io';
+const url = new URL(Astro.url.pathname, origin).toString();
+const person = {
+  '@type': 'Person', '@id': `${origin}/#person`, name: profile.name,
+  url: origin, email: `mailto:${profile.email}`, sameAs: [profile.linkedin],
+  alumniOf: { '@type': 'CollegeOrUniversity', name: profile.university },
+  affiliation: { '@type': 'Organization', name: 'STRK', url: profile.strk },
+  knowsAbout: ['B2B sales', 'customer discovery', 'entrepreneurship']
+};
+const labels: Record<string, string> = { work: 'Work', strk: 'STRK', experience: 'Experience', about: 'About', cv: 'CV' };
+const segments = Astro.url.pathname.split('/').filter(Boolean);
+const breadcrumb = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: origin + '/' },
+    ...segments.map((segment, index) => ({
+      '@type': 'ListItem', position: index + 2, name: labels[segment] ?? segment,
+      item: new URL('/' + segments.slice(0, index + 1).join('/') + '/', origin).toString()
+    }))
+  ]
+};
+const page = kind === 'about' ? {
+  '@type': 'ProfilePage', mainEntity: { '@id': `${origin}/#person` }, name: title, description, url
+} : {
+  '@type': 'WebPage', name: title, description, url,
+  about: { '@id': `${origin}/#person` },
+  isPartOf: { '@type': 'WebSite', name: 'Ilian Aigner', url: origin }
+};
+const structured = {
+  '@context': 'https://schema.org',
+  '@graph': [person, page, ...(segments.length ? [breadcrumb] : [])]
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0B0E13" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content={kind === 'about' ? 'profile' : 'website'} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={new URL(image, origin).toString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(structured)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header shell" id="top">
+      <a class="brand" href="/" aria-label="Ilian Aigner — home">Ilian Aigner<span aria-hidden="true">.</span></a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="/work/" aria-current={Astro.url.pathname.startsWith('/work/') ? 'page' : undefined}>Work</a>
+        <a href="/experience/" aria-current={Astro.url.pathname === '/experience/' ? 'page' : undefined}>Experience</a>
+        <a href="/about/" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a>
+        <a href="/cv/" aria-current={Astro.url.pathname === '/cv/' ? 'page' : undefined}>CV</a>
+        <a class="nav-contact" href={`mailto:${profile.email}`}>Contact <span aria-hidden="true">↗</span></a>
+      </nav>
+      <details class="mobile-menu">
+        <summary aria-label="Toggle menu">Menu <span aria-hidden="true">＋</span></summary>
+        <nav aria-label="Mobile navigation">
+          <a href="/work/">Work</a><a href="/experience/">Experience</a>
+          <a href="/about/">About</a><a href="/cv/">CV</a>
+          <a href={`mailto:${profile.email}`}>Contact ↗</a>
+        </nav>
+      </details>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer shell">
+      <div><a class="footer-name" href="/">Ilian Aigner</a><p>Sales-minded. Curious by design.</p></div>
+      <div class="footer-links"><a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href={profile.strk} target="_blank" rel="noopener noreferrer">STRK ↗</a><a href={`mailto:${profile.email}`}>Email ↗</a></div>
+      <small>© {new Date().getFullYear()} Ilian Aigner</small>
+    </footer>
+  </body>
+</html>
