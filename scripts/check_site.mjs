@@ -33,12 +33,14 @@ for (const item of ['404.html', 'robots.txt', 'sitemap-index.xml', 'ilian-aigner
   if (!fs.existsSync(path.join(root, item))) throw new Error(`Missing output: ${item}`);
 }
 const home = fs.readFileSync(htmlFor('/'), 'utf8');
+const work = fs.readFileSync(htmlFor('/work/'), 'utf8');
 const experience = fs.readFileSync(htmlFor('/experience/'), 'utf8');
 const cv = fs.readFileSync(htmlFor('/cv/'), 'utf8');
 if (!cv.includes('Download PDF') || !cv.includes('Preview the PDF') || !cv.includes('href="/ilian-aigner-cv.pdf"')) throw new Error('CV must expose the generated PDF');
 if (!cv.includes('Email me') || !cv.includes('Connect on LinkedIn')) throw new Error('CV must expose direct contact options');
 if (!home.includes('team discovery effort spanning 80+')) throw new Error('Interview count must be attributed to the team');
 if (!home.includes('class="story-chapter founder-story"') || !home.includes('data-journey-label="Building STRK"')) throw new Error('STRK must complete the scrolling story');
+if (!work.includes('Top 20 of 122') || !work.includes('Read the STRK case study')) throw new Error('Work opening must show evidence and a case-study action');
 for (const [name, text] of [['home', home], ['experience', experience], ['cv', cv]]) {
   if (!text.includes('Fall 2028')) throw new Error(`${name}: wrong graduation date`);
   if (!text.includes('80+')) throw new Error(`${name}: missing team discovery figure`);
