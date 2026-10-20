@@ -568,3 +568,5 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
   .mobile-menu[open] nav{animation:menu-reveal .18s ease-out both}
 }
 @keyframes menu-reveal{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+/* Keep the light-mode STRK wordmark at its native 12:5 aspect ratio. */
+.brand-showcase img{height:auto}
