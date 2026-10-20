@@ -222,3 +222,11 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .about-origin{border-top-color:#806448}
 .about-chapter p.about-origin-line{font:600 clamp(28px,3vw,43px)/1.25 Archivo,Arial,sans-serif;letter-spacing:-.04em;color:var(--text);max-width:800px;border-left:2px solid var(--amber);padding-left:23px;margin:38px 0 28px}
 @media(max-width:760px){.about-chapter p.about-origin-line{font-size:clamp(27px,7vw,34px);padding-left:16px;margin:29px 0 25px}}
+/* The sticky journey resolves at STRK instead of ending before the final chapter. */
+.story-journey .founder-story{max-width:none;border-top:1px solid var(--line);padding:90px 0 125px}
+.story-journey .founder-heading h2{font-size:clamp(53px,5.2vw,78px);margin-bottom:44px}
+.story-journey .founder-grid{gap:clamp(28px,4vw,65px)}
+.story-journey .strk-art{min-height:330px;gap:30px}
+.story-journey .strk-art .logo-panel{width:100%}
+@media(min-width:761px) and (max-width:900px){.story-journey .founder-grid{display:flex;flex-direction:column-reverse;gap:25px}.story-journey .founder-copy{max-width:540px}.story-journey .strk-art{width:100%;min-height:260px}.story-journey .strk-art .logo-panel{width:min(80%,390px)}}
+@media(max-width:760px){.story-journey .founder-story{padding:65px 0 80px}.story-journey .founder-heading h2{font-size:clamp(43px,10vw,62px);margin-bottom:30px}.story-journey .strk-art{min-height:240px}.story-journey .strk-art .logo-panel{width:min(85%,390px)}}

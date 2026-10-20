@@ -38,6 +38,7 @@ const cv = fs.readFileSync(htmlFor('/cv/'), 'utf8');
 if (!cv.includes('Download PDF') || !cv.includes('Preview the PDF') || !cv.includes('href="/ilian-aigner-cv.pdf"')) throw new Error('CV must expose the generated PDF');
 if (!cv.includes('Email me') || !cv.includes('Connect on LinkedIn')) throw new Error('CV must expose direct contact options');
 if (!home.includes('team discovery effort spanning 80+')) throw new Error('Interview count must be attributed to the team');
+if (!home.includes('class="story-chapter founder-story"') || !home.includes('data-journey-label="Building STRK"')) throw new Error('STRK must complete the scrolling story');
 for (const [name, text] of [['home', home], ['experience', experience], ['cv', cv]]) {
   if (!text.includes('Fall 2028')) throw new Error(`${name}: wrong graduation date`);
   if (!text.includes('80+')) throw new Error(`${name}: missing team discovery figure`);
