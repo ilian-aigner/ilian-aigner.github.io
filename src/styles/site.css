@@ -568,5 +568,22 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
   .mobile-menu[open] nav{animation:menu-reveal .18s ease-out both}
 }
 @keyframes menu-reveal{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+/* Real photographs punctuate the personal story without becoming proof of a coaching session. */
+.chapter-moment{width:min(100%,690px);margin:70px 0 0 auto}
+.chapter-moment img{width:100%;height:auto;aspect-ratio:1.25;object-fit:cover;object-position:center 42%;filter:saturate(.82) contrast(1.02)}
+.chapter-moment figcaption,.about-photo-diptych figcaption{border-top:1px solid var(--line);padding-top:12px;margin-top:11px;color:var(--muted);font-size:12px;line-height:1.5}
+.about-photo-diptych{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(15px,2vw,28px);align-items:end;padding:34px 0 85px;border-bottom:1px solid var(--line)}
+.about-photo-diptych figure{min-width:0;margin:0}
+.about-photo-diptych img{width:100%;height:clamp(430px,49vw,650px);object-fit:cover;filter:saturate(.8) contrast(1.03)}
+.about-photo-diptych figure:first-child img{object-position:42% 45%}
+.about-photo-diptych figure:last-child img{height:clamp(350px,41vw,550px);object-position:center 46%}
+.about-photo-diptych+.about-proof{border-top:0}
+@media(max-width:760px){
+  .chapter-moment{margin-top:43px}
+  .chapter-moment img{aspect-ratio:1/1;object-position:55% center}
+  .about-photo-diptych{grid-template-columns:1fr 1fr;gap:12px;padding:20px 0 65px}
+  .about-photo-diptych img,.about-photo-diptych figure:last-child img{height:clamp(230px,64vw,390px)}
+  .about-photo-diptych figcaption{font-size:11px}
+}
 /* Keep the light-mode STRK wordmark at its native 12:5 aspect ratio. */
 .brand-showcase img{height:auto}
