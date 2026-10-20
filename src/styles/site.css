@@ -170,3 +170,15 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 @media(max-width:1100px){.about-hero{min-height:0}.about-hero h1{font-size:clamp(64px,7.7vw,100px)}.about-hero-photo{height:540px}}
 @media(max-width:760px){.about-hero{display:block;padding-block:55px 35px}.about-hero-copy .section-label{margin-bottom:28px}.about-hero h1{font-size:clamp(59px,12.5vw,85px);margin-bottom:27px}.about-hero-copy>p:last-child{font-size:18px;max-width:600px;margin-bottom:36px}.about-hero-photo{height:min(118vw,600px)}.about-story{padding-bottom:35px}.about-chapter{display:block;padding:45px 0 66px}.about-chapter .section-label{margin:0 0 24px}.about-chapter h2{font-size:clamp(44px,10vw,65px);margin-bottom:25px}.about-chapter p:not(.section-label){font-size:16px}.about-next{display:block;padding:55px 0 90px}.about-next h2{font-size:clamp(48px,11vw,70px);margin-bottom:28px}.about-next>div:last-child p{font-size:17px}}
 @media(max-width:430px){.about-hero h1{font-size:clamp(56px,12vw,64px)}.about-hero-photo{height:410px}.about-chapter h2{font-size:clamp(42px,10.5vw,50px)}}
+/* On Experience, the chronology leads; education and proof support it without competing cards. */
+.experience-hero{padding-top:72px;padding-bottom:38px}
+.experience-hero h1{font-size:clamp(72px,8.5vw,128px)}
+.experience-history{padding-top:50px}
+.education-band{background:transparent;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 0;margin-bottom:100px}
+.education-band h2{margin:24px 0 30px}
+.education-detail{padding-bottom:4px}
+.experience-proof-grid{grid-template-columns:1.3fr .7fr;gap:8vw}
+.experience-proof-grid>div:first-child strong{font-size:clamp(70px,8vw,118px)}
+.experience-proof-grid>div:last-child strong{font-size:clamp(38px,4.3vw,61px);color:var(--text)}
+.experience-proof-grid>div:last-child p{max-width:360px}
+@media(max-width:760px){.experience-hero{padding-top:55px;padding-bottom:25px}.experience-hero h1{font-size:clamp(61px,12vw,80px)}.experience-history{padding-top:36px}.education-band{padding:48px 0;margin-bottom:75px}.experience-proof-grid{grid-template-columns:1fr;gap:5px}.experience-proof-grid>div:first-child strong{font-size:clamp(70px,18vw,90px)}.experience-proof-grid>div:last-child strong{font-size:clamp(42px,11vw,58px)}}
