@@ -47,6 +47,14 @@ const structured = {
   '@context': 'https://schema.org',
   '@graph': [person, page, ...(segments.length ? [breadcrumb] : [])]
 };
+const nextPages: Record<string, { label: string; href: string; context: string }> = {
+  '/about/': { label: 'See the experience', href: '/experience/', context: 'Where those lessons have been put to work' },
+  '/experience/': { label: 'Explore the work', href: '/work/', context: 'The projects and conversations behind the résumé' },
+  '/work/': { label: 'Go inside STRK', href: '/work/strk/', context: 'From classroom discovery to a product in development' },
+  '/work/strk/': { label: 'Read the CV', href: '/cv/', context: 'The full background on one page' },
+  '/cv/': { label: 'Start a conversation', href: '/#contact', context: 'Email or connect on LinkedIn' }
+};
+const nextPage = nextPages[Astro.url.pathname];
 ---
 <!doctype html>
 <html lang="en">
@@ -80,26 +88,27 @@ const structured = {
       <details class="mobile-menu">
         <summary aria-label="Toggle menu">Menu <span aria-hidden="true">＋</span></summary>
         <nav aria-label="Mobile navigation">
-          <a href="/work/">Work</a><a href="/experience/">Experience</a>
-          <a href="/about/">About</a><a href="/cv/">CV</a>
+          <a href="/work/" aria-current={Astro.url.pathname.startsWith('/work/') ? 'page' : undefined}>Work</a><a href="/experience/" aria-current={Astro.url.pathname === '/experience/' ? 'page' : undefined}>Experience</a>
+          <a href="/about/" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a><a href="/cv/" aria-current={Astro.url.pathname === '/cv/' ? 'page' : undefined}>CV</a>
           <details class="contact-picker mobile-contact"><summary>Contact ＋</summary><div class="contact-options"><a href={`mailto:${profile.email}`}>Email me</a><a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></details>
         </nav>
       </details>
     </header>
     <main id="main"><slot /></main>
+    {nextPage && <nav class="next-chapter shell" aria-label="Continue exploring"><p>{nextPage.context}</p><a href={nextPage.href}>{nextPage.label}<span aria-hidden="true">↗</span></a></nav>}
     <footer class="site-footer shell">
       <div><a class="footer-name" href="/">Ilian Aigner</a><p>Hamburg roots. Delaware chapter. More to build.</p></div>
-      <div class="footer-links"><a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href={profile.strk} target="_blank" rel="noopener noreferrer">STRK ↗</a><a href={`mailto:${profile.email}`}>Email ↗</a></div>
+      <div class="footer-links"><a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href={profile.strk} target="_blank" rel="noopener noreferrer">STRK ↗</a><a href={`mailto:${profile.email}`}>Email ↗</a><a href="#top">Back to top ↑</a></div>
       <small>© {new Date().getFullYear()} Ilian Aigner</small>
     </footer>
     <script>
       document.addEventListener('keydown', (event) => {
         if (event.key !== 'Escape') return;
-        const opened = document.querySelector<HTMLDetailsElement>('.contact-picker[open]') ?? document.querySelector<HTMLDetailsElement>('.mobile-menu[open]');
-        if (opened) { opened.open = false; opened.querySelector('summary')?.focus(); }
+        const opened = [...document.querySelectorAll<HTMLDetailsElement>('.contact-picker[open], .mobile-menu[open]')];
+        if (opened.length) { opened.forEach(menu => menu.open = false); opened[0].querySelector('summary')?.focus(); }
       });
       document.addEventListener('click', (event) => {
-        document.querySelectorAll<HTMLDetailsElement>('.contact-picker[open]').forEach(picker => {
+        document.querySelectorAll<HTMLDetailsElement>('.contact-picker[open], .mobile-menu[open]').forEach(picker => {
           if (!picker.contains(event.target as Node)) picker.open = false;
         });
       });

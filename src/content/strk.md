@@ -1,7 +1,7 @@
-The starting point was classroom entrepreneurship work. We explored an initial fitness problem through interviews, business model canvases, and research synthesis. Some of those conversations were about an earlier concept, before the current STRK direction existed.
+STRK began in an entrepreneurship class with an earlier fitness concept. We took it beyond the classroom: talking to potential customers, working through business model canvases, and comparing what people told us with what we had assumed.
 
-My contributions include interview work, synthesizing what we heard, developing business model canvases, and helping shape positioning and product direction. I contributed to a **team discovery effort spanning 80+ customer interviews**. The work was collaborative: interviews, synthesis, and business model iterations fed into the next decisions.
+I contributed to a **team discovery effort spanning 80+ customer interviews**. My work included interview synthesis, business model canvases, positioning, and helping shape the next product direction. Those conversations gave us sharper questions and a reason to keep building.
 
-The direction evolved toward an end-user fitness coaching experience. The proposed product helps someone define goals, follow a personalized plan, record activity and feedback, and adapt over time. AI is intended for everyday guidance. A connected human trainer is optional and may provide contextual support, review, and changes to future plans.
+The direction evolved into an end-user fitness coaching app. We are developing an experience that helps someone set a goal, follow a personalized plan, record activity, and adapt with feedback. AI is intended to support everyday guidance. An optional connected human trainer can bring context, review activity, and help change future plans.
 
-STRK is in development and testing. The classroom research gave us a starting point, not validation of the current product. Our next job is to test the coaching experience with trainers and clients: where everyday guidance helps, where context is missing, and when human support makes the difference.
+The earliest interviews were about a different concept, so they do not validate the current product. The work now is to test this coaching experience with trainers and clients and learn where each kind of support helps.
