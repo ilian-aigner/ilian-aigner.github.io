@@ -280,3 +280,11 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
   .work-contributions span{font-size:22px}
   .work-feature-copy .work-contributions p{font-size:15px}
 }
+/* A closer portrait makes About feel like a conversation, not a second homepage. */
+.about-hero-photo img{transform:scale(1.14);transform-origin:center 30%}
+.about-hero-photo figcaption{position:absolute;z-index:1;left:30px;bottom:24px;display:flex;align-items:center;gap:14px;color:var(--text);font-size:12px;font-weight:700}
+.about-hero-photo figcaption span{color:var(--amber);font-size:17px;font-weight:400}
+@media(max-width:760px){
+  .about-hero-photo img{transform:scale(1.06)}
+  .about-hero-photo figcaption{left:18px;bottom:15px;font-size:11px}
+}
