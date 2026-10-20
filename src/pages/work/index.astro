@@ -7,12 +7,35 @@ import profile from '../../data/profile.json';
     <div class="work-hero-copy"><p class="section-label">Selected work / 2025–present</p><h1>Ambition,<br />put to work.</h1><p>I’m building STRK, a fitness coaching app in development. I reached the Top 20 of 122 in the Lerner Sales Competition and supported lead qualification at Horbach.</p><a class="work-hero-cta" href="/work/strk/">Read the STRK case study <span aria-hidden="true">↗</span></a></div>
     <a class="work-hero-brand" href="/work/strk/" aria-label="Read the STRK case study"><img src="/assets/images/strk-wordmark-light.svg" width="720" height="300" alt="Current STRK light-mode wordmark" /><span>Read the STRK case study <b aria-hidden="true">↗</b></span></a>
   </header>
-  <nav class="work-chapter-nav shell" aria-label="Jump to selected work"><a href="#strk"><span>01</span><strong>Building STRK</strong></a><a href="#sales-competition"><span>02</span><strong>Sales competition</strong></a><a href="#consultative-sales"><span>03</span><strong>Client conversations</strong></a></nav>
+  <div class="work-chapters">
+  <nav class="work-chapter-nav shell" aria-label="Jump to selected work"><a href="#strk"><span>01</span><strong>Building STRK</strong><small>STRK</small></a><a href="#sales-competition"><span>02</span><strong>Sales competition</strong><small>Sales</small></a><a href="#consultative-sales"><span>03</span><strong>Client conversations</strong><small>Clients</small></a></nav>
   <section class="work-feature shell" id="strk" aria-labelledby="strk-heading"><div class="work-feature-copy"><div><p class="eyebrow-number">01 / Founder work</p><h2 class="strk-title" id="strk-heading">STRK</h2><p class="work-feature-deck">From classroom discovery to a fitness coaching app we’re developing and testing.</p></div><div><ol class="work-contributions"><li><span>Discover</span><p>Contributed to a team discovery effort spanning 80+ customer interviews.</p></li><li><span>Synthesize</span><p>Turned interview themes into business model canvases and positioning.</p></li><li><span>Build &amp; test</span><p>We’re developing the current coaching experience with AI guidance and optional human trainer support.</p></li></ol><a class="inline-link" href="/work/strk/">Read the STRK case study <span aria-hidden="true">↗</span></a></div></div></section>
   <section class="work-evidence shell" id="sales-competition" aria-labelledby="competition-heading"><p class="eyebrow-number">02 / Sales under pressure</p><div class="work-evidence-grid"><div class="work-result"><strong>Top <span>20</span></strong><p>Semi-finalist<br />Lerner Sales Competition · 2026<br />122 participants</p></div><div class="work-evidence-copy"><h2 id="competition-heading">Learn fast.<br />Make it clear.</h2><p>In a simulated sales role, I presented an oncology-focused solution without a medical background. I learned a complex subject quickly, identified client priorities, and translated technical information into business value.</p><a class="inline-link" href="/experience/">See the experience <span aria-hidden="true">↗</span></a></div></div></section>
   <section class="work-conversation shell" id="consultative-sales" aria-labelledby="conversation-heading"><p class="eyebrow-number">03 / Client conversations</p><div class="work-conversation-grid"><h2 id="conversation-heading">Start with the person.<br /><span>Not the script.</span></h2><div><p>At Horbach, I supported lead qualification and appointment setting, and shadowed senior advisors in needs-based financial planning conversations.</p><p>That experience reinforced a principle I take into B2B sales: understand someone’s situation before deciding what to recommend.</p><a class="inline-link" href="/experience/">Full experience <span aria-hidden="true">↗</span></a></div></div></section>
+  </div>
   <section class="work-close shell" aria-labelledby="work-close-heading">
     <div><p class="section-label">For a U.S. sales team</p><h2 id="work-close-heading">Let’s put the work<br />to use.</h2></div>
     <div class="work-close-action"><p>I’m seeking a B2B sales, SDR, or BDR internship. I’ve practiced customer discovery, lead qualification, and explaining complex offers. I’d like to bring that preparation to your team.</p><div><a class="button button-primary" href="/ilian-aigner-cv.pdf" download>Download my CV <span aria-hidden="true">↓</span></a><a class="button button-outline" href={`mailto:${profile.email}`}>Email me <span aria-hidden="true">↗</span></a></div></div>
   </section>
+  <script>
+    const chapterNav = document.querySelector<HTMLElement>('.work-chapter-nav');
+    const chapterLinks = [...(chapterNav?.querySelectorAll<HTMLAnchorElement>('a[href^="#"]') ?? [])];
+    const chapterSections = chapterLinks.map((link) => document.querySelector<HTMLElement>(link.getAttribute('href')!));
+    if (chapterNav && chapterLinks.length && chapterSections.every(Boolean)) {
+      let queued = false;
+      const updateChapter = () => {
+        queued = false;
+        const threshold = chapterNav.getBoundingClientRect().bottom + 42;
+        const active = chapterSections.findLastIndex((section) => section!.getBoundingClientRect().top <= threshold);
+        chapterLinks.forEach((link, index) => {
+          if (index === Math.max(0, active)) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      };
+      const scheduleChapter = () => { if (!queued) { queued = true; requestAnimationFrame(updateChapter); } };
+      window.addEventListener('scroll', scheduleChapter, { passive: true });
+      window.addEventListener('resize', scheduleChapter);
+      updateChapter();
+    }
+  </script>
 </Base>
