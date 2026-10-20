@@ -182,3 +182,10 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .experience-proof-grid>div:last-child strong{font-size:clamp(38px,4.3vw,61px);color:var(--text)}
 .experience-proof-grid>div:last-child p{max-width:360px}
 @media(max-width:760px){.experience-hero{padding-top:55px;padding-bottom:25px}.experience-hero h1{font-size:clamp(61px,12vw,80px)}.experience-history{padding-top:36px}.education-band{padding:48px 0;margin-bottom:75px}.experience-proof-grid{grid-template-columns:1fr;gap:5px}.experience-proof-grid>div:first-child strong{font-size:clamp(70px,18vw,90px)}.experience-proof-grid>div:last-child strong{font-size:clamp(42px,11vw,58px)}}
+/* The discovery heading stays alongside its evidence, and the proposed cycle visibly returns. */
+.strk-origin-heading{position:sticky;top:95px;align-self:start}
+.coaching-steps:after{content:"";position:absolute;right:5px;top:5px;bottom:-34px;width:1px;background:var(--blue)}
+.coaching-return{position:relative;border-top:1px solid var(--blue);margin:33px 0 0;padding:15px 0 0 23px;color:var(--blue);font-size:13px;font-weight:600;line-height:1.5}
+.coaching-return:before{content:"←";position:absolute;left:0;top:-19px;padding-right:8px;background:var(--bg);font-size:24px;font-weight:400}
+.coaching-support{margin-top:60px}
+@media(max-width:760px){.strk-origin-heading{position:static}.coaching-steps:after{display:none}.coaching-return{border:0;border-left:1px solid var(--blue);margin:24px 0 0 5px;padding:2px 0 0 27px}.coaching-return:before{content:"↺";left:-11px;top:-14px;padding:0 4px;font-size:23px}.coaching-support{margin-top:56px}}
