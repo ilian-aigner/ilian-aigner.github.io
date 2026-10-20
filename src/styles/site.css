@@ -315,6 +315,7 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .strk-chapters.is-past-story{opacity:0;pointer-events:none}
 .strk-chapters a[aria-current=location]{border-color:var(--blue)}
 .strk-chapters a[aria-current=location] strong{color:#86cbd9}
+.strk-chapters .chapter-short{display:none}
 .strk-origin h2[id],.content-section h2[id]{scroll-margin-top:190px}
 @media(max-width:760px){
   .strk-case-hero{padding:32px 0 25px}
@@ -324,13 +325,14 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
   .strk-case-brief p:not(.strk-case-lede){line-height:1.55;margin-bottom:18px}
   .strk-brand{padding-top:0}
   .strk-brand .brand-showcase{min-height:235px;padding:22px}
-  .strk-chapters{display:flex;gap:19px;overflow-x:auto;scrollbar-width:none;padding:13px 0 15px;scroll-snap-type:x proximity}
-  .strk-chapters::-webkit-scrollbar{display:none}
-  .strk-chapters a{flex:0 0 142px;display:block;scroll-snap-align:start;padding:9px 0 4px;min-width:0}
+  .strk-chapters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;overflow:visible;padding:13px 0 15px}
+  .strk-chapters a{display:block;padding:9px 0 4px;min-width:0}
   .strk-chapters a+a{border-color:#3B5963}
   .strk-chapters a[aria-current=location]{border-color:var(--blue)}
   .strk-chapters span{display:block;padding:0 0 5px}
-  .strk-chapters strong{display:block;font-size:15px}
+  .strk-chapters strong{display:none}
+  .strk-chapters .chapter-short{display:block;color:var(--text);font:600 13px/1.3 Archivo,Arial,sans-serif;letter-spacing:-.02em}
+  .strk-chapters a[aria-current=location] .chapter-short{color:#86cbd9}
   .strk-origin h2[id],.content-section h2[id]{scroll-margin-top:145px}
 }
 /* On small screens, let the portrait enter the first view without obscuring the pitch. */

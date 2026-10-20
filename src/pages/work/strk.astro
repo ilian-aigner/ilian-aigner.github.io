@@ -8,9 +8,9 @@ import { Content as STRKStory } from '../../content/strk.md';
   <section class="strk-brand shell" aria-label="STRK brand and current status"><div class="brand-showcase"><img src="/assets/images/strk-wordmark-light.svg" width="720" height="300" alt="STRK light-mode wordmark" /></div><div class="strk-status"><span>Current status</span><strong>In development and testing</strong><p>A proposed coaching experience, not a launched app.</p></div></section>
   <div class="strk-reading">
   <nav class="strk-chapters shell" aria-label="Case study chapters">
-    <a href="#origin-heading" aria-current="location"><span>01</span><strong>Where it began</strong><small>Classroom to discovery</small></a>
-    <a href="#coaching-heading"><span>02</span><strong>What we’re building</strong><small>The proposed coaching loop</small></a>
-    <a href="#questions-heading"><span>03</span><strong>What needs proof</strong><small>Questions for testing</small></a>
+    <a href="#origin-heading" aria-current="location"><span>01</span><strong>Where it began</strong><small>Classroom to discovery</small><b class="chapter-short">Origin</b></a>
+    <a href="#coaching-heading"><span>02</span><strong>What we’re building</strong><small>The proposed coaching loop</small><b class="chapter-short">Product</b></a>
+    <a href="#questions-heading"><span>03</span><strong>What needs proof</strong><small>Questions for testing</small><b class="chapter-short">Testing</b></a>
   </nav>
   <section class="strk-origin shell" aria-labelledby="origin-heading"><div class="strk-origin-heading"><p class="eyebrow-number">The origin</p><h2 id="origin-heading">Built through questions.</h2></div><div class="case-story"><STRKStory /></div><aside class="strk-research-note" aria-label="Customer discovery context"><strong>80+</strong><div><h3>Customer interviews across the team’s discovery effort.</h3><p>The earliest conversations concerned an earlier concept. They helped shape the direction; they do not validate the current app.</p></div></aside></section>
   <section class="content-section shell">
@@ -45,10 +45,6 @@ import { Content as STRKStory } from '../../content/strk.md';
           if (link.hash === `#${activeId}`) link.setAttribute('aria-current', 'location');
           else link.removeAttribute('aria-current');
         });
-        if (window.matchMedia('(max-width: 760px)').matches) {
-          const link = chapterLinks.find(item => item.hash === `#${activeId}`);
-          if (link) chapterNav.scrollTo({ left: link.offsetLeft - chapterNav.offsetLeft - (chapterNav.clientWidth - link.clientWidth) / 2, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-        }
       };
       const scheduleChapters = () => { if (!queued) { queued = true; requestAnimationFrame(updateChapters); } };
       window.addEventListener('scroll', scheduleChapters, { passive: true });
