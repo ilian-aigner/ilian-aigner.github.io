@@ -260,6 +260,7 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .story-journey .strk-art .logo-panel{width:100%}
 @media(min-width:761px) and (max-width:900px){.story-journey .founder-grid{display:flex;flex-direction:column-reverse;gap:25px}.story-journey .founder-copy{max-width:540px}.story-journey .strk-art{width:100%;min-height:260px}.story-journey .strk-art .logo-panel{width:min(80%,390px)}}
 @media(max-width:760px){.story-journey .founder-story{padding:65px 0 80px}.story-journey .founder-heading h2{font-size:clamp(43px,10vw,62px);margin-bottom:30px}.story-journey .strk-art{min-height:240px}.story-journey .strk-art .logo-panel{width:min(85%,390px)}}
+@media(prefers-reduced-motion:reduce){.journey-fill,.journey-marker{display:none}}
 /* Introduce the founder's contribution before the wordmark takes the stage. */
 .strk-case-hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:6vw;align-items:end;min-height:clamp(470px,56svh,600px);padding:65px 0 70px}
 .strk-case-hero h1{font-size:clamp(66px,6.9vw,100px);margin:26px 0 0}
