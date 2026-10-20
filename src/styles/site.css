@@ -348,6 +348,7 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .strk-case-brief p:not(.strk-case-lede){font-size:16px;line-height:1.75;max-width:430px;margin-bottom:27px}
 .strk-case-brief a{display:inline-flex;align-items:center;gap:20px;color:var(--blue);font-size:14px;font-weight:700;border-bottom:1px solid var(--blue);padding-bottom:6px}
 .strk-case-brief a:hover{color:#78c5d6}
+@media(min-width:761px) and (max-width:1100px){.strk-case-hero{min-height:clamp(480px,50vw,550px);padding:45px 0 55px}}
 @media(max-width:760px){.strk-case-hero{display:block;min-height:0;padding:65px 0 55px}.strk-case-hero h1{font-size:clamp(58px,12.5vw,86px)}.strk-case-brief{margin-top:55px;padding-top:22px}.strk-case-brief .strk-case-lede{font-size:clamp(27px,7.6vw,37px)}.strk-case-brief p:not(.strk-case-lede){font-size:15px}}
 /* Keep the three real chapters in view as the case study unfolds. */
 .strk-chapters{position:sticky;top:0;z-index:10;background:rgba(11,14,19,.96);backdrop-filter:blur(12px);padding-top:25px;padding-bottom:17px;border-bottom:1px solid var(--line);transition:opacity .2s}
