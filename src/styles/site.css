@@ -547,10 +547,8 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
    cross-document view transitions keep ordinary navigation. */
 @media(prefers-reduced-motion:no-preference){
   @view-transition{navigation:auto}
-  .site-header{view-transition-name:portfolio-header}
-  main{view-transition-name:portfolio-content}
-  ::view-transition-old(portfolio-content){animation:.12s ease-in both portfolio-leave}
-  ::view-transition-new(portfolio-content){animation:.2s .1s ease-out both portfolio-enter}
+  ::view-transition-old(root){animation:.12s ease-in both portfolio-leave}
+  ::view-transition-new(root){animation:.2s .1s ease-out both portfolio-enter}
 }
 @keyframes portfolio-leave{to{opacity:0}}
 @keyframes portfolio-enter{from{opacity:0}}
