@@ -221,7 +221,9 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .experience-hero .section-label{grid-column:1/-1;margin-bottom:23px}
 .experience-hero h1{font-size:clamp(68px,7.4vw,106px);margin-bottom:0}
 .experience-hero .experience-hero-intro{max-width:440px;border-left:1px solid var(--amber);padding-left:20px;margin-bottom:8px;font-size:clamp(18px,2vw,26px);line-height:1.5}
-.experience-hero .experience-hero-cv{grid-column:2;justify-self:start;margin-top:10px;font-size:13px}
+.experience-hero .experience-hero-cv{grid-column:2;justify-self:start;display:inline-flex;align-items:center;justify-content:space-between;gap:24px;min-height:48px;margin-top:10px;padding:11px 16px;border:1px solid #786B5A;font-size:13px;transition:border-color .2s ease,background-color .2s ease}
+.experience-hero .experience-hero-cv:hover{border-color:var(--amber);background:#D1A36C13}
+.experience-hero .experience-hero-cv span{margin-left:0}
 .experience-history{padding-top:32px}
 .experience-history-intro{align-items:center}
 .experience-history-intro h2{font-size:clamp(42px,4.6vw,64px)}
@@ -233,7 +235,9 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
   .experience-hero{display:block;padding-top:45px;padding-bottom:17px}
   .experience-hero h1{font-size:clamp(57px,11vw,72px);margin-bottom:22px}
   .experience-hero .experience-hero-intro{border-left:0;padding-left:0;margin-bottom:0}
-  .experience-hero .experience-hero-cv{display:inline-block;margin-top:21px}
+  .experience-hero .experience-hero-cv{display:inline-flex;margin-top:21px;background:var(--amber);border-color:var(--amber);color:var(--bg)}
+  .experience-hero .experience-hero-cv span{color:var(--bg)}
+  .experience-hero .experience-hero-cv:hover{background:#E0B985}
   .experience-history{padding-top:27px}
   .experience-history-intro h2{font-size:clamp(38px,9vw,48px);margin:15px 0 0}
   .experience-history .career-list{margin-top:26px}
