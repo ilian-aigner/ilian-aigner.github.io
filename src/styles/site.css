@@ -202,3 +202,15 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
   .story-hero .hero-photo{height:min(550px,calc(100svh - 125px))}
   .story-hero .hero-bottom{padding:11px 0 15px}
 }
+/* Work opens with the actual project, so its proof appears before the first scroll. */
+.work-hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:6vw;align-items:center;min-height:600px;padding:55px 0 70px}
+.work-hero h1{font-size:clamp(70px,8.2vw,118px);margin:24px 0 28px}
+.work-hero-copy>p:last-child{font-size:clamp(18px,1.8vw,23px);line-height:1.55;max-width:660px;margin:0}
+.work-hero-brand{min-height:430px;padding:38px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:30px;background:radial-gradient(ellipse at 50% 48%,#205a69 0%,#14343f 45%,#0b1219 78%,var(--bg) 100%)}
+.work-hero-brand img{width:min(100%,480px);height:auto;box-shadow:0 28px 70px #0007;transform:rotate(-3deg);transition:transform .35s}
+.work-hero-brand:hover img{transform:rotate(0deg) translateY(-4px)}
+.work-hero-brand span{display:flex;justify-content:space-between;width:min(100%,480px);font-size:12px;color:#d8e3e6}
+.work-hero-brand b{font-size:18px;color:var(--blue);font-weight:400;line-height:1}
+.work-feature{border-top:1px solid var(--line);padding-top:44px}
+.work-feature-copy{padding-top:0}
+@media(max-width:760px){.work-hero{display:block;min-height:0;padding:48px 0 35px}.work-hero h1{font-size:clamp(60px,12.5vw,80px);margin:20px 0 24px}.work-hero-copy>p:last-child{font-size:17px}.work-hero-brand{min-height:270px;margin-top:37px;padding:30px 18px;gap:23px}.work-hero-brand img,.work-hero-brand span{width:min(100%,360px)}.work-feature{padding-top:36px}.work-feature-copy{padding-top:0}}
