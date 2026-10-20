@@ -552,3 +552,19 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 }
 @keyframes portfolio-leave{to{opacity:0}}
 @keyframes portfolio-enter{from{opacity:0}}
+/* Mobile navigation is a readable chapter index, with contact one tap away. */
+@media(max-width:760px){
+  .mobile-menu nav{top:calc(100% + 14px);width:min(calc(100vw - 38px),430px);min-width:0;display:block;max-height:calc(100svh - 92px);overflow:auto;padding:15px 22px 20px;background:var(--surface);border:1px solid #454B53;box-shadow:0 28px 70px #000b}
+  .mobile-menu nav>a{display:block;padding:14px 0 15px;border-bottom:1px solid #454B53;font:600 clamp(27px,8vw,37px)/1 Archivo,Arial,sans-serif;letter-spacing:-.05em}
+  .mobile-menu nav>a[aria-current=page]{box-shadow:none;color:var(--amber)}
+  .mobile-menu nav>a:hover{background:transparent;color:var(--amber)}
+  .mobile-menu-contact{padding-top:19px}
+  .mobile-menu-contact p{margin:0 0 9px;color:var(--amber);font-size:11px;font-weight:700}
+  .mobile-menu nav .mobile-menu-contact a{display:block;padding:10px 0;border-top:1px solid #454B53;border-bottom:0;background:transparent}
+  .mobile-menu-contact strong{display:block;font-size:15px;font-weight:700}
+  .mobile-menu-contact small{display:block;margin-top:2px;color:var(--muted);font-size:11px}
+}
+@media(max-width:760px) and (prefers-reduced-motion:no-preference){
+  .mobile-menu[open] nav{animation:menu-reveal .18s ease-out both}
+}
+@keyframes menu-reveal{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
