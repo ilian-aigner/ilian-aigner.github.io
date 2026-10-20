@@ -94,7 +94,7 @@ const nextPage = nextPages[Astro.url.pathname];
         <nav aria-label="Mobile navigation">
           <a href="/work/" aria-current={Astro.url.pathname.startsWith('/work/') ? 'page' : undefined}>Work</a><a href="/experience/" aria-current={Astro.url.pathname === '/experience/' ? 'page' : undefined}>Experience</a>
           <a href="/about/" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a><a href="/cv/" aria-current={Astro.url.pathname === '/cv/' ? 'page' : undefined}>CV</a>
-          <details class="contact-picker mobile-contact"><summary>Contact ＋</summary><div class="contact-options"><a href={`mailto:${profile.email}`}>Email me</a><a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></details>
+          <details class="contact-picker mobile-contact"><summary>Contact <span aria-hidden="true">＋</span></summary><div class="contact-options"><a href={`mailto:${profile.email}`}>Email me</a><a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></details>
         </nav>
       </details>
     </header>
