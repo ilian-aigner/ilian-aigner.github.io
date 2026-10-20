@@ -470,3 +470,5 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 @media(max-width:760px){
   a.inline-link{display:inline-flex;align-items:center;min-height:44px;padding:10px 0;font-size:14px}
 }
+/* Keep the case-study title in three intentional lines on the narrowest phones. */
+@media(max-width:350px){.strk-case-hero h1{font-size:52px}}
