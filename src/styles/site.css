@@ -121,6 +121,13 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .strk-status span{font-size:12px;color:var(--blue)}
 .strk-status strong{font-size:16px;color:var(--text)}
 .strk-status p{font-size:13px;margin:0}
+.strk-chapters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,4vw,70px);padding-top:58px}
+.strk-chapters a{display:grid;grid-template-columns:36px minmax(0,1fr);grid-template-rows:auto auto;column-gap:13px;align-content:start;border-top:1px solid #3B5963;padding:19px 0 8px;transition:border-color .2s ease,transform .2s ease}
+.strk-chapters a:hover,.strk-chapters a:focus-visible{border-color:var(--blue);transform:translateY(-3px)}
+.strk-chapters span{grid-row:1/3;color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.08em;padding-top:5px}
+.strk-chapters strong{font:600 clamp(18px,1.65vw,23px)/1.2 Archivo,Arial,sans-serif;letter-spacing:-.03em;color:var(--text)}
+.strk-chapters small{color:var(--muted);font-size:12px;line-height:1.45;margin-top:7px}
+.strk-origin h2[id],.content-section h2[id]{scroll-margin-top:30px}
 .strk-origin{display:grid;grid-template-columns:.72fr 1.28fr;gap:5vw;padding:105px 0 65px}
 .strk-origin-heading h2{font-size:clamp(54px,5.7vw,86px);margin:25px 0 0;max-width:460px}
 .strk-origin .eyebrow-number{color:var(--blue)}
@@ -133,7 +140,8 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .strk-research-note>strong{font:600 clamp(100px,12vw,170px)/.9 Archivo,Arial,sans-serif;letter-spacing:-.08em;color:var(--blue)}
 .strk-research-note h3{font-size:clamp(27px,3vw,43px);max-width:620px;margin:0 0 17px}
 .strk-research-note p{font-size:14px;line-height:1.7;max-width:590px;margin:0}
-@media(max-width:760px){.strk-brand{padding-top:10px}.strk-status{grid-template-columns:1fr;gap:7px;padding:20px 0}.strk-status strong{font-size:15px}.strk-origin{display:block;padding:68px 0 15px}.strk-origin-heading h2{font-size:clamp(48px,11vw,70px);margin-bottom:42px}.case-story{padding-left:20px}.case-story p{font-size:16px;margin-bottom:40px}.strk-research-note{display:block;margin-top:55px;padding:25px 0 35px}.strk-research-note>strong{display:block;font-size:clamp(90px,24vw,130px);margin-bottom:15px}.strk-research-note h3{font-size:clamp(27px,7vw,37px)}}
+@media(max-width:760px){.strk-brand{padding-top:10px}.strk-status{grid-template-columns:1fr;gap:7px;padding:20px 0}.strk-status strong{font-size:15px}.strk-chapters{display:block;padding-top:35px}.strk-chapters a{grid-template-columns:32px minmax(0,1fr);padding:15px 0}.strk-chapters a+a{border-color:var(--line)}.strk-chapters small{display:none}.strk-origin{display:block;padding:68px 0 15px}.strk-origin-heading h2{font-size:clamp(48px,11vw,70px);margin-bottom:42px}.case-story{padding-left:20px}.case-story p{font-size:16px;margin-bottom:40px}.strk-research-note{display:block;margin-top:55px;padding:25px 0 35px}.strk-research-note>strong{display:block;font-size:clamp(90px,24vw,130px);margin-bottom:15px}.strk-research-note h3{font-size:clamp(27px,7vw,37px)}}
+@media(prefers-reduced-motion:reduce){.strk-chapters a{transition:none}.strk-chapters a:hover,.strk-chapters a:focus-visible{transform:none}}
 /* Keep the résumé in view while its reading, download, and print actions stay at hand. */
 .cv-stage{display:grid;grid-template-columns:minmax(250px,310px) minmax(0,1fr);gap:clamp(32px,4vw,70px);align-items:start;padding-top:75px;padding-bottom:130px}
 .cv-guide-inner{position:sticky;top:35px}
