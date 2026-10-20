@@ -148,3 +148,25 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 @media(max-width:760px){.cv-stage{padding-top:42px;padding-bottom:75px}.cv-guide h1{font-size:clamp(58px,13vw,82px)}.cv-lede{font-size:15px}.cv-actions{display:grid;grid-template-columns:1fr 1fr}.cv-actions .button{width:100%;min-width:0;gap:8px}.cv-actions .button:first-child{grid-column:1/-1}.cv-stage .resume{padding:32px 25px}.cv-stage .resume p,.cv-stage .resume li,.cv-stage .resume-row{font-size:13px;line-height:1.55}.cv-stage .resume-row{display:block}.cv-stage .resume-row strong,.cv-stage .resume-row span{display:block}.cv-stage .resume-row span{white-space:normal;margin-top:3px;color:#5C626A}.cv-stage .resume-role{margin-bottom:23px}}
 @media(max-width:430px){.cv-actions{grid-template-columns:1fr}.cv-actions .button:first-child{grid-column:auto}.cv-stage .resume{padding:28px 22px}.cv-stage .resume h2{font-size:36px}}
 @media print{.cv-stage{display:block;width:100%;max-width:none;padding:0}.cv-guide,.next-chapter{display:none!important}.cv-stage .resume{padding:0;box-shadow:none}.cv-stage .resume h2{font-size:30px}.cv-stage .resume p,.cv-stage .resume li,.cv-stage .resume-row{font-size:10px;line-height:1.4}.cv-stage .resume .resume-contact{font-size:10px}.cv-stage .resume-row{display:flex}.cv-stage .resume-row span{white-space:nowrap}.cv-stage .resume-role{margin-bottom:0}}
+/* About opens with the person, then moves through the experiences that shaped his work. */
+.about-hero{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:clamp(30px,3.5vw,65px);align-items:center;min-height:680px;padding-block:65px 90px}
+.about-hero-copy{position:relative;z-index:1}
+.about-hero-copy .section-label{margin-bottom:35px}
+.about-hero h1{font-size:clamp(72px,8.2vw,124px);margin:0 0 37px;letter-spacing:-.065em}
+.about-hero-copy>p:last-child{font-size:clamp(19px,2vw,26px);line-height:1.55;max-width:600px;margin:0}
+.about-hero-photo{height:610px;margin:0;position:relative;overflow:hidden;background:#171b20}
+.about-hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.about-hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--bg) 0%,transparent 18%,transparent 92%,var(--bg) 100%);pointer-events:none}
+.about-story{padding-bottom:80px}
+.about-chapter{display:grid;grid-template-columns:minmax(190px,.42fr) minmax(0,1fr);gap:7vw;border-top:1px solid var(--line);padding:68px 0 95px}
+.about-chapter .section-label{margin:8px 0 0;color:var(--amber)}
+.about-chapter h2{font-size:clamp(48px,5.6vw,82px);margin:0 0 32px;max-width:850px}
+.about-chapter p:not(.section-label){font-size:18px;line-height:1.85;max-width:710px;margin:0}
+.about-chapter .inline-link{display:inline-block;margin-top:28px}
+.about-next{display:grid;grid-template-columns:1.1fr .9fr;gap:6vw;align-items:end;border-top:1px solid var(--line);padding:85px 0 135px}
+.about-next h2{font-size:clamp(58px,6vw,94px);margin:25px 0 0}
+.about-next>div:last-child{max-width:520px;padding-bottom:7px}
+.about-next>div:last-child p{font-size:19px;line-height:1.75;margin:0 0 30px}
+@media(max-width:1100px){.about-hero{min-height:0}.about-hero h1{font-size:clamp(64px,7.7vw,100px)}.about-hero-photo{height:540px}}
+@media(max-width:760px){.about-hero{display:block;padding-block:55px 35px}.about-hero-copy .section-label{margin-bottom:28px}.about-hero h1{font-size:clamp(59px,12.5vw,85px);margin-bottom:27px}.about-hero-copy>p:last-child{font-size:18px;max-width:600px;margin-bottom:36px}.about-hero-photo{height:min(118vw,600px)}.about-story{padding-bottom:35px}.about-chapter{display:block;padding:45px 0 66px}.about-chapter .section-label{margin:0 0 24px}.about-chapter h2{font-size:clamp(44px,10vw,65px);margin-bottom:25px}.about-chapter p:not(.section-label){font-size:16px}.about-next{display:block;padding:55px 0 90px}.about-next h2{font-size:clamp(48px,11vw,70px);margin-bottom:28px}.about-next>div:last-child p{font-size:17px}}
+@media(max-width:430px){.about-hero h1{font-size:clamp(56px,12vw,64px)}.about-hero-photo{height:410px}.about-chapter h2{font-size:clamp(42px,10.5vw,50px)}}
