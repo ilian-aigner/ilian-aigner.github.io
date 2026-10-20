@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">STRK case study by Ilian Aigner</title>
+  <desc id="description">From classroom discovery to a fitness coaching app in development and testing.</desc>
+  <rect width="1200" height="630" fill="#0B0E13"/>
+  <path d="M76 74H1124" stroke="#343B43"/>
+  <path d="M76 556H1124" stroke="#343B43"/>
+  <path d="M76 94V141" stroke="#329DB4" stroke-width="4"/>
+  <text x="96" y="128" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#8FCEDE">ILIAN AIGNER / FOUNDER WORK</text>
+  <text x="76" y="270" font-family="Arial, sans-serif" font-size="76" font-weight="700" letter-spacing="-3" fill="#F4F1EB">From discovery</text>
+  <text x="76" y="358" font-family="Arial, sans-serif" font-size="76" font-weight="700" letter-spacing="-3" fill="#F4F1EB">to direction<tspan fill="#329DB4">.</tspan></text>
+  <text x="80" y="450" font-family="Arial, sans-serif" font-size="25" fill="#AEB4BF">A fitness coaching app in development and testing.</text>
+  <rect x="790" y="198" width="330" height="270" rx="4" fill="#FAFAFA"/>
+  <text x="839" y="354" font-family="Liberation Sans, Arial, sans-serif" font-size="66" font-weight="700" letter-spacing="9.5" fill="#181818">STRK</text>
+  <circle cx="1071" cy="332" r="6.5" fill="#329DB4"/>
+  <text x="80" y="601" font-family="Arial, sans-serif" font-size="19" fill="#AEB4BF">Customer discovery · business model · product direction</text>
+</svg>

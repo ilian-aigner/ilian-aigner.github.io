@@ -14,8 +14,9 @@ interface Props {
   description: string;
   kind?: 'home' | 'about' | 'page';
   image?: string;
+  imageAlt?: string;
 }
-const { title, description, kind = 'page', image = '/assets/images/social-preview.png' } = Astro.props;
+const { title, description, kind = 'page', image = '/assets/images/social-preview.png', imageAlt = 'Ilian Aigner, STRK co-founder pursuing U.S. B2B sales internships' } = Astro.props;
 const origin = Astro.site?.origin ?? 'https://ilian-aigner.github.io';
 const url = new URL(Astro.url.pathname, origin).toString();
 const person = {
@@ -84,7 +85,7 @@ const nextPage = nextPages[Astro.url.pathname];
     <meta property="og:image" content={new URL(image, origin).toString()} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Ilian Aigner, STRK co-founder pursuing U.S. B2B sales internships" />
+    <meta property="og:image:alt" content={imageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={new URL(image, origin).toString()} />
     <script type="application/ld+json" set:html={JSON.stringify(structured)} />
