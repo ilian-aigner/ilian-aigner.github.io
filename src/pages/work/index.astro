@@ -25,8 +25,12 @@ import profile from '../../data/profile.json';
       let queued = false;
       const updateChapter = () => {
         queued = false;
-        const threshold = chapterNav.getBoundingClientRect().bottom + 42;
+        const threshold = chapterNav.getBoundingClientRect().bottom + 80;
         const active = chapterSections.findLastIndex((section) => section!.getBoundingClientRect().top <= threshold);
+        const start = window.scrollY + chapterSections[0]!.getBoundingClientRect().top - chapterNav.offsetHeight;
+        const end = window.scrollY + chapterSections.at(-1)!.getBoundingClientRect().bottom - window.innerHeight * .45;
+        const progress = Math.min(1, Math.max(0, (window.scrollY - start) / Math.max(1, end - start)));
+        chapterNav.style.setProperty('--work-progress', String(progress));
         chapterLinks.forEach((link, index) => {
           if (index === Math.max(0, active)) link.setAttribute('aria-current', 'location');
           else link.removeAttribute('aria-current');
