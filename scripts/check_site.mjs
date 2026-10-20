@@ -9,7 +9,7 @@ for (const route of routes) {
   const file = htmlFor(route);
   if (!fs.existsSync(file)) throw new Error(`Missing route: ${route}`);
   const html = fs.readFileSync(file, 'utf8');
-  if (!html.includes('href="/_astro/Base.css"')) throw new Error(`Missing stable stylesheet: ${route}`);
+  if (!/href="\/_astro\/Base\.css\?v=[a-f0-9]{10}"/.test(html)) throw new Error(`Missing versioned stable stylesheet: ${route}`);
   if (/href="\/_astro\/Base\.[\w-]+\.css"/.test(html)) throw new Error(`Hashed stylesheet will break cached HTML: ${route}`);
   if (!/<h1\b/.test(html)) throw new Error(`Missing h1: ${route}`);
   if (!/rel="canonical"/.test(html)) throw new Error(`Missing canonical: ${route}`);

@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 
 const root = path.resolve('dist');
 const assets = path.join(root, '_astro');
@@ -20,6 +21,7 @@ css = css.replace(/\/_astro\/([\w-]+)\.([\w-]+)\.(woff2?)/g, (match, name, hash,
   return `/_astro/${name}.${extension}`;
 });
 fs.writeFileSync(path.join(assets, 'Base.css'), css);
+const version = createHash('sha256').update(css).digest('hex').slice(0, 10);
 
 function rewriteHtml(directory) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
@@ -29,9 +31,9 @@ function rewriteHtml(directory) {
       const html = fs.readFileSync(filename, 'utf8');
       const oldUrl = `/_astro/${source}`;
       if (!html.includes(oldUrl)) throw new Error(`Stylesheet link not found in ${filename}`);
-      fs.writeFileSync(filename, html.replaceAll(oldUrl, '/_astro/Base.css'));
+      fs.writeFileSync(filename, html.replaceAll(oldUrl, `/_astro/Base.css?v=${version}`));
     }
   }
 }
 rewriteHtml(root);
-console.log(`Stable stylesheet: /_astro/Base.css (${source} retained for cached pages)`);
+console.log(`Stable stylesheet: /_astro/Base.css?v=${version} (${source} retained for cached pages)`);
