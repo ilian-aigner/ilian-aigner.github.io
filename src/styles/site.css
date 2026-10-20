@@ -297,3 +297,17 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 @media(min-width:761px) and (max-width:900px){
   .story-hero .hero-photo>img{mask-image:linear-gradient(to right,transparent 0%,transparent 8%,#000 39%,#000 92%,transparent 100%)}
 }
+/* A quiet geographical sign-off gives the personal chapter its own shape. */
+.personal-note>.personal-route{grid-column:1/-1;max-width:none;display:grid;grid-template-columns:auto minmax(35px,1fr) auto;gap:28px;align-items:end;border-top:1px solid var(--line);padding-top:29px;margin-top:32px}
+.personal-route>div{display:flex;flex-direction:column;gap:5px;min-width:0}
+.personal-route>div:last-child{text-align:right}
+.personal-route span:not(.personal-route-track){color:var(--amber);font-size:11px;font-weight:700;letter-spacing:.06em}
+.personal-route strong{font:600 clamp(27px,5.1vw,72px)/1 Archivo,Arial,sans-serif;letter-spacing:-.06em;color:var(--text)}
+.personal-route-track{position:relative;align-self:end;height:1px;background:var(--amber);margin-bottom:clamp(13px,2.2vw,27px)}
+.personal-route-track:before{content:"";position:absolute;left:0;top:-3px;width:7px;height:7px;border-radius:50%;background:var(--amber)}
+.personal-route-track:after{content:"";position:absolute;right:0;top:-4px;width:8px;height:8px;border-top:1px solid var(--amber);border-right:1px solid var(--amber);transform:rotate(45deg)}
+@media(max-width:760px){
+  .personal-note>.personal-route{gap:12px;margin-top:46px;padding-top:23px}
+  .personal-route strong{font-size:clamp(23px,7vw,34px)}
+  .personal-route-track{margin-bottom:9px}
+}
