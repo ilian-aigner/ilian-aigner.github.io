@@ -549,8 +549,8 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
   @view-transition{navigation:auto}
   .site-header{view-transition-name:portfolio-header}
   main{view-transition-name:portfolio-content}
-  ::view-transition-old(portfolio-content){animation:.14s ease-out both portfolio-leave}
-  ::view-transition-new(portfolio-content){animation:.24s ease-out both portfolio-enter}
+  ::view-transition-old(portfolio-content){animation:.12s ease-in both portfolio-leave}
+  ::view-transition-new(portfolio-content){animation:.2s .1s ease-out both portfolio-enter}
 }
 @keyframes portfolio-leave{to{opacity:0}}
 @keyframes portfolio-enter{from{opacity:0}}
