@@ -419,3 +419,8 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 /* Keep the opening beat close to the first chapter without crowding the text. */
 .story-opening{padding-top:105px;padding-bottom:72px}
 @media(max-width:760px){.story-opening{padding-top:75px;padding-bottom:45px}}
+/* Shared footer links stay easy to reach and tap on a phone. */
+@media(max-width:760px){
+  .site-footer .footer-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px;margin:22px 0 16px}
+  .site-footer .footer-links a{display:inline-flex;align-items:center;min-height:48px;width:max-content;max-width:100%;font-size:13px}
+}
