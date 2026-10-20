@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import profile from '../data/profile.json';
+---
+<Base title="Resume — Ilian Aigner" description="Read or download Ilian Aigner's one-page resume for U.S. B2B sales, SDR, and BDR internships.">
+  <div class="shell cv-stage">
+    <aside class="cv-guide">
+      <div class="cv-guide-inner">
+        <p class="section-label">Resume</p>
+        <h1>The work.<br />One page.</h1>
+        <p class="cv-lede">For SDR, BDR, and B2B sales teams. Read below or download the PDF.</p>
+        <nav class="cv-actions" aria-label="Resume actions">
+          <a class="button button-primary" href="/ilian-aigner-resume.pdf" download>Download PDF <span aria-hidden="true">↓</span></a>
+          <a class="button button-outline" href={`mailto:${profile.email}`}>Email me <span aria-hidden="true">↗</span></a>
+        </nav>
+        <div class="cv-utilities" aria-label="More resume options">
+          <a href="/ilian-aigner-resume.pdf" target="_blank" rel="noopener">Preview the PDF <span aria-hidden="true">↗</span></a>
+          <button type="button" onclick="window.print()">Print this page <span aria-hidden="true">↗</span></button>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="cv-format">One page · Selectable text · Letter size</p>
+      </div>
+    </aside>
+
+    <article class="resume" aria-label="Ilian Aigner resume">
+      <h2>{profile.name}</h2>
+      <p class="resume-contact"><a href={`mailto:${profile.email}`}>{profile.email}</a> · <a href={profile.linkedin}>LinkedIn</a> · <a href={profile.strk}>STRK</a></p>
+      <p>{profile.resume.summary}</p>
+      <h3>Education</h3>
+      <div class="resume-row"><strong>{profile.university} — {profile.degree}</strong><span>{profile.graduation}</span></div>
+      <p class="resume-muted">Minors: {profile.minors}</p>
+      <h3>Relevant experience</h3>
+      {profile.resume.experience.map(item => <div class="resume-role">
+        <div class="resume-row"><strong>{item.role}, {item.organization}</strong><span>{item.dates}</span></div>
+        <p class="resume-muted">{item.location}</p>
+        <ul>{item.bullets.map(b => <li>{b}</li>)}</ul>
+      </div>)}
+      <h3>Selected achievements &amp; skills</h3>
+      <ul>{profile.resume.achievements.map(a => <li>{a}</li>)}</ul>
+      <p><strong>Tools &amp; methods:</strong> {profile.resume.tools}</p>
+      <p><strong>Languages:</strong> {profile.resume.languages}</p>
+    </article>
+  </div>
+</Base>

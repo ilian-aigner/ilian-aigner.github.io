@@ -23,9 +23,10 @@ const person = {
   '@type': 'Person', '@id': `${origin}/#person`, name: profile.name,
   url: origin, email: `mailto:${profile.email}`, sameAs: [profile.linkedin],
   affiliation: [{ '@type': 'CollegeOrUniversity', name: profile.university }, { '@type': 'Organization', name: 'STRK', url: profile.strk }],
-  knowsAbout: ['B2B sales', 'customer discovery', 'entrepreneurship']
+  knowsAbout: ['B2B sales', 'customer discovery', 'entrepreneurship'],
+  knowsLanguage: ['German', 'English', 'French']
 };
-const labels: Record<string, string> = { work: 'Work', strk: 'STRK', experience: 'Experience', about: 'About', cv: 'CV' };
+const labels: Record<string, string> = { work: 'Work', strk: 'STRK', experience: 'Experience', about: 'About', resume: 'Resume', cv: 'Resume' };
 const segments = Astro.url.pathname.split('/').filter(Boolean);
 const breadcrumb = {
   '@type': 'BreadcrumbList',
@@ -49,10 +50,11 @@ const structured = {
   '@graph': [person, page, ...(segments.length ? [breadcrumb] : [])]
 };
 const nextPages: Record<string, { label: string; href: string; context: string }> = {
-  '/about/': { label: 'See the experience', href: '/experience/', context: 'Where those lessons have been put to work' },
-  '/experience/': { label: 'Explore the work', href: '/work/', context: 'The projects and conversations behind the résumé' },
-  '/work/strk/': { label: 'Read the CV', href: '/cv/', context: 'The full background on one page' },
-  '/cv/': { label: 'Start a conversation', href: '/#contact-choices', context: 'Email or connect on LinkedIn' }
+  '/about/': { label: 'Explore the work', href: '/work/', context: 'What I have built and tested' },
+  '/work/': { label: 'See the experience', href: '/experience/', context: 'The roles and dates behind the work' },
+  '/experience/': { label: 'Read the Resume', href: '/resume/', context: 'My background on one page' },
+  '/work/strk/': { label: 'See the experience', href: '/experience/', context: 'The rest of my background' },
+  '/resume/': { label: 'Start a conversation', href: '/#contact-choices', context: 'Email or connect on LinkedIn' }
 };
 const nextPage = nextPages[Astro.url.pathname];
 ---
@@ -95,17 +97,17 @@ const nextPage = nextPages[Astro.url.pathname];
     <header class="site-header shell" id="top">
       <a class="brand" href="/" aria-label="Ilian Aigner — home">Ilian Aigner<span aria-hidden="true">.</span></a>
       <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="/about/" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a>
         <a href="/work/" aria-current={Astro.url.pathname.startsWith('/work/') ? 'page' : undefined}>Work</a>
         <a href="/experience/" aria-current={Astro.url.pathname === '/experience/' ? 'page' : undefined}>Experience</a>
-        <a href="/about/" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a>
-        <a href="/cv/" aria-current={Astro.url.pathname === '/cv/' ? 'page' : undefined}>CV</a>
+        <a href="/resume/" aria-current={Astro.url.pathname === '/resume/' ? 'page' : undefined}>Resume</a>
         <details class="contact-picker"><summary class="nav-contact">Contact <span aria-hidden="true">＋</span></summary><div class="contact-options"><a href={`mailto:${profile.email}`}><strong>Email me</strong><small>{profile.email}</small></a><a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><strong>Connect on LinkedIn ↗</strong><small>View my profile and message me</small></a></div></details>
       </nav>
       <details class="mobile-menu">
         <summary aria-label="Toggle menu">Menu <span aria-hidden="true">＋</span></summary>
         <nav aria-label="Mobile navigation">
-          <a href="/work/" aria-current={Astro.url.pathname.startsWith('/work/') ? 'page' : undefined}>Work</a><a href="/experience/" aria-current={Astro.url.pathname === '/experience/' ? 'page' : undefined}>Experience</a>
-          <a href="/about/" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a><a href="/cv/" aria-current={Astro.url.pathname === '/cv/' ? 'page' : undefined}>CV</a>
+          <a href="/about/" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a><a href="/work/" aria-current={Astro.url.pathname.startsWith('/work/') ? 'page' : undefined}>Work</a>
+          <a href="/experience/" aria-current={Astro.url.pathname === '/experience/' ? 'page' : undefined}>Experience</a><a href="/resume/" aria-current={Astro.url.pathname === '/resume/' ? 'page' : undefined}>Resume</a>
           <div class="mobile-menu-contact" aria-label="Contact options"><p>Start a conversation</p><a href={`mailto:${profile.email}`}><strong>Email me</strong><small>{profile.email}</small></a><a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><strong>LinkedIn ↗</strong><small>Connect with me there</small></a></div>
         </nav>
       </details>

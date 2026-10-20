@@ -13,8 +13,8 @@
   "competition": "Top 20 semi-finalist, Lerner Sales Competition",
   "languages": "German, English, French",
   "strkDescription": "STRK is a fitness coaching app in development and testing. It is designed to help people understand their goals, follow a personalized plan, record activity, and adapt through feedback. AI supports everyday guidance, while an optional connected human trainer can provide contextual support and review future plan changes.",
-  "cv": {
-    "summary": "STRK co-founder and University of Delaware entrepreneurship student pursuing U.S. B2B sales, SDR, and BDR internships. Brings hands-on customer discovery, lead qualification, and consultative sales experience; Top 20 semi-finalist in the Lerner Sales Competition.",
+  "resume": {
+    "summary": "From Hamburg, now studying entrepreneurship at the University of Delaware and co-founding STRK. Seeking U.S. B2B sales, SDR, and BDR internships. Experience in customer discovery, lead qualification, and consultative sales; Top 20 Lerner Sales Competition semi-finalist.",
     "experience": [
       {
         "role": "Co-founder",
@@ -52,6 +52,6 @@
       "HubSpot Sales Hub Software course certificate, earned Dec 2025"
     ],
     "tools": "HubSpot Sales Hub; customer discovery; business model canvases; lead qualification",
-    "languages": "German, English, French (fluent)"
+    "languages": "German, English, French"
   }
 }

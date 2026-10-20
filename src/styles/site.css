@@ -568,22 +568,57 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
   .mobile-menu[open] nav{animation:menu-reveal .18s ease-out both}
 }
 @keyframes menu-reveal{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
-/* Real photographs punctuate the personal story without becoming proof of a coaching session. */
-.chapter-moment{width:min(100%,690px);margin:70px 0 0 auto}
-.chapter-moment img{width:100%;height:auto;aspect-ratio:1.25;object-fit:cover;object-position:center 42%;filter:saturate(.9) sepia(.06) contrast(1.02)}
-.chapter-moment figcaption,.about-photo-diptych figcaption{border-top:1px solid var(--line);padding-top:12px;margin-top:11px;color:var(--muted);font-size:12px;line-height:1.5}
+/* Personal images have their own space, separate from evidence of coaching work. */
+.about-photo-diptych figcaption{border-top:1px solid var(--line);padding-top:12px;margin-top:11px;color:var(--muted);font-size:12px;line-height:1.5}
 .about-photo-diptych{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(15px,2vw,28px);align-items:end;padding:34px 0 85px;border-bottom:1px solid var(--line)}
 .about-photo-diptych figure{min-width:0;margin:0}
 .about-photo-diptych img{width:100%;height:clamp(430px,49vw,650px);object-fit:cover;filter:saturate(.8) contrast(1.03)}
 .about-photo-diptych figure:first-child img{object-position:42% 45%}
 .about-photo-diptych figure:last-child img{height:clamp(350px,41vw,550px);object-position:center 46%}
-.about-photo-diptych+.about-proof{border-top:0}
 @media(max-width:760px){
-  .chapter-moment{margin-top:43px}
-  .chapter-moment img{aspect-ratio:1/1;object-position:55% center}
   .about-photo-diptych{grid-template-columns:1fr 1fr;gap:12px;padding:20px 0 65px}
   .about-photo-diptych img,.about-photo-diptych figure:last-child img{height:clamp(230px,64vw,390px)}
   .about-photo-diptych figcaption{font-size:11px}
 }
 /* Keep the light-mode STRK wordmark at its native 12:5 aspect ratio. */
 .brand-showcase img{height:auto}
+/* Give identity its own early chapter; keep roles, proof, and dates on their own pages. */
+.culture-opening{max-width:none;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(300px,.72fr);gap:clamp(45px,7vw,120px);align-items:start;padding-top:110px;padding-bottom:105px}
+.culture-opening h2{font-size:clamp(54px,6vw,92px);margin:22px 0 28px}
+.culture-opening>div:first-child>p:not(.section-label){max-width:640px;font-size:19px;line-height:1.75;margin:0 0 22px}
+.culture-languages{border-top:1px solid var(--amber)}
+.culture-languages>p{color:var(--amber);font-size:12px;font-weight:700;margin:18px 0 20px}
+.culture-languages ul,.about-culture-copy ul{list-style:none;margin:0;padding:0}
+.culture-languages li{border-top:1px solid var(--line);padding:10px 0;color:var(--text);font:600 clamp(30px,3.3vw,48px)/1.1 Archivo,Arial,sans-serif;letter-spacing:-.05em}
+.culture-photo{margin:37px 0 0}
+.culture-photo img{display:block;width:100%;height:auto;aspect-ratio:1.5;object-fit:cover;object-position:center 54%;filter:saturate(.85)}
+.culture-photo figcaption{color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:10px;margin-top:9px}
+.about-culture{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(280px,.75fr);gap:clamp(50px,8vw,135px);border-top:1px solid var(--line);padding-top:88px;padding-bottom:110px;scroll-margin-top:25px}
+.about-culture h2{font-size:clamp(52px,5.4vw,78px);line-height:1.03;margin:22px 0 0}
+.about-culture-copy p{font-size:18px;line-height:1.75;margin:0 0 34px}
+.about-culture-copy li{border-top:1px solid var(--line);padding:12px 0;color:var(--text);font:600 clamp(28px,3vw,43px)/1.1 Archivo,Arial,sans-serif;letter-spacing:-.04em}
+.about-culture-copy li:last-child{border-bottom:1px solid var(--line)}
+.about-personal{padding-bottom:85px}
+.about-personal .about-personal-pause{border-top:1px solid #806448}
+.about-personal .about-personal-copy p{margin-bottom:0}
+.about-personal .about-photo-diptych{border-bottom:0;padding-bottom:0}
+.experience-training{padding-bottom:100px}
+.experience-training h2{margin-bottom:20px}
+.experience-training>p:not(.section-label){font-size:18px;line-height:1.7;max-width:610px}
+@media(max-width:760px){
+  .culture-opening{display:block;padding-top:64px;padding-bottom:74px}
+  .culture-opening h2{font-size:clamp(42px,11vw,58px);margin:16px 0 20px}
+  .culture-opening>div:first-child>p:not(.section-label){font-size:16px;line-height:1.7}
+  .culture-aside{margin-top:37px}
+  .culture-languages li{font-size:35px;padding:9px 0}
+  .culture-photo{margin-top:29px}
+  .culture-photo img{aspect-ratio:1.55}
+  .about-culture{display:block;padding-top:60px;padding-bottom:74px}
+  .about-culture h2{font-size:clamp(41px,10.5vw,57px);margin:18px 0 29px}
+  .about-culture-copy p{font-size:16px;line-height:1.7;margin-bottom:24px}
+  .about-culture-copy li{font-size:32px}
+  .about-personal{padding-bottom:70px}
+  .about-personal .about-personal-pause{padding:55px 0 45px}
+  .experience-training{padding-bottom:75px}
+  .experience-training>p:not(.section-label){font-size:16px}
+}

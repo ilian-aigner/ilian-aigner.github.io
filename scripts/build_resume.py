@@ -1,5 +1,6 @@
-"""Generate the one-page public CV from src/data/profile.json."""
+"""Generate the one-page public resume from src/data/profile.json."""
 import json
+import shutil
 from pathlib import Path
 
 from reportlab.lib import colors
@@ -20,7 +21,7 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[1]
 data = json.loads((ROOT / "src/data/profile.json").read_text())
-out = ROOT / "public/ilian-aigner-cv.pdf"
+out = ROOT / "public/ilian-aigner-resume.pdf"
 ink = colors.HexColor("#20242A")
 blue = colors.HexColor("#185C72")
 grey = colors.HexColor("#5C626A")
@@ -40,7 +41,7 @@ story.append(Paragraph(
 story.append(Spacer(1, 8))
 story.append(HRFlowable(width="100%", thickness=1.2, color=blue))
 story.append(Spacer(1, 8))
-story.append(Paragraph(data["cv"]["summary"], base))
+story.append(Paragraph(data["resume"]["summary"], base))
 
 
 def section(title):
@@ -70,18 +71,18 @@ section("Education")
 role(data["university"] + " — " + data["degree"], data["graduation"],
      "Minors: " + data["minors"], [])
 section("Relevant experience")
-for item in data["cv"]["experience"]:
+for item in data["resume"]["experience"]:
     role(item["role"] + ", " + item["organization"], item["dates"], item["location"], item["bullets"])
 section("Selected achievements")
-for item in data["cv"]["achievements"]:
+for item in data["resume"]["achievements"]:
     story.append(Paragraph("-  " + item, small))
 section("Tools and languages")
-story.append(Paragraph("<b>Tools &amp; methods:</b> " + data["cv"]["tools"], small))
-story.append(Paragraph("<b>Languages:</b> " + data["cv"]["languages"], small))
+story.append(Paragraph("<b>Tools &amp; methods:</b> " + data["resume"]["tools"], small))
+story.append(Paragraph("<b>Languages:</b> " + data["resume"]["languages"], small))
 
 doc = SimpleDocTemplate(str(out), pagesize=letter, leftMargin=59, rightMargin=59,
-                        topMargin=45, bottomMargin=43, title="Ilian Aigner — CV",
-                        author="Ilian Aigner", subject="B2B sales internship résumé")
+                        topMargin=45, bottomMargin=43, title="Ilian Aigner — Resume",
+                        author="Ilian Aigner", subject="B2B sales internship resume")
 def white_page(canvas, _doc):
     canvas.saveState()
     canvas.setFillColor(colors.white)
@@ -90,4 +91,5 @@ def white_page(canvas, _doc):
 
 
 doc.build(story, onFirstPage=white_page, onLaterPages=white_page)
+shutil.copyfile(out, ROOT / "public/ilian-aigner-cv.pdf")  # Existing bookmarks keep working.
 print(out)

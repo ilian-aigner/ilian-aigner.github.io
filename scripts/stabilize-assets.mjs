@@ -30,7 +30,10 @@ function rewriteHtml(directory) {
     else if (entry.name.endsWith('.html')) {
       const html = fs.readFileSync(filename, 'utf8');
       const oldUrl = `/_astro/${source}`;
-      if (!html.includes(oldUrl)) throw new Error(`Stylesheet link not found in ${filename}`);
+      if (!html.includes(oldUrl)) {
+        if (path.relative(root, filename) === path.join('cv', 'index.html')) continue; // Unstyled legacy redirect.
+        throw new Error(`Stylesheet link not found in ${filename}`);
+      }
       fs.writeFileSync(filename, html.replaceAll(oldUrl, `/_astro/Base.css?v=${version}`));
     }
   }
