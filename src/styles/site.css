@@ -512,5 +512,16 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 }
 /* Keep the case-study title in three intentional lines on the narrowest phones. */
 @media(max-width:350px){.strk-case-hero h1{font-size:52px}}
+/* The case study turns from classroom evidence to a proposed product in one clear beat. */
+.strk-turn{margin:12px 0 0;padding:clamp(65px,8vw,125px) 0 clamp(70px,9vw,140px);background:linear-gradient(145deg,#102a34 0%,#0e202a 46%,var(--bg) 100%);overflow:hidden}
+.strk-turn-inner{display:grid;grid-template-columns:minmax(220px,.65fr) 70px minmax(0,1.35fr);gap:clamp(28px,4vw,68px);align-items:start}
+.strk-turn-before{border-top:1px solid #6497a3;padding-top:22px;max-width:300px}
+.strk-turn-before span,.strk-turn-now span{display:block;color:#9dd5df;font-size:12px;font-weight:700;margin-bottom:18px}
+.strk-turn-before p{color:#d0dee1;font-size:clamp(17px,1.5vw,21px);line-height:1.6;margin:0}
+.strk-turn-direction{color:#9dd5df;font:400 82px/1 Archivo,Arial,sans-serif;transform:rotate(-90deg);transform-origin:center;margin-top:5px;text-align:center}
+.strk-turn-now{border-top:1px solid #6497a3;padding-top:22px}
+.strk-turn-now h2{font-size:clamp(48px,5.7vw,84px);line-height:1.01;margin:0 0 30px;max-width:820px}
+.strk-turn-now p{color:#d0dee1;font-size:17px;line-height:1.75;max-width:650px;margin:0}
+@media(max-width:760px){.strk-turn{margin-top:0;padding:65px 0 75px}.strk-turn-inner{display:block}.strk-turn-before{max-width:none}.strk-turn-before p{max-width:310px}.strk-turn-direction{font-size:56px;text-align:left;transform:none;margin:24px 0 12px}.strk-turn-now h2{font-size:clamp(46px,10.5vw,70px);margin-bottom:24px}.strk-turn-now p{font-size:15px}}
 /* A CV-to-contact deep link should reveal both choices at once. */
 #contact-choices{scroll-margin-top:clamp(95px,14svh,150px)}
