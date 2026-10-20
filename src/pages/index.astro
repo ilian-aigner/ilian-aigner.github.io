@@ -2,46 +2,36 @@
 import Base from '../layouts/Base.astro';
 import profile from '../data/profile.json';
 ---
-<Base title="Ilian Aigner — B2B Sales, Customer Discovery & STRK" description="Ilian Aigner is a University of Delaware entrepreneurship student and STRK co-founder seeking U.S. B2B sales, SDR, and BDR internships." kind="home">
-  <section class="home-hero shell" aria-labelledby="hero-title">
-    <div class="hero-copy">
-      <div class="hero-kicker"><span class="amber-line"></span><span>University of Delaware · Expected Fall 2028</span></div>
-      <h1 id="hero-title">Ilian<br /><span>Aigner</span><b aria-hidden="true">.</b></h1>
-      <p class="hero-statement">B2B sales, customer discovery, and building STRK.</p>
-      <p class="hero-intro">Entrepreneurship student at the University of Delaware and co-founder of STRK. Seeking U.S. B2B sales, SDR, and BDR internships.</p>
-      <div class="action-row"><a class="button button-primary" href="/work/">View my work <span aria-hidden="true">↗</span></a><a class="button button-outline" href="/ilian-aigner-cv.pdf" download>Download CV <span aria-hidden="true">↓</span></a></div>
-    </div>
-    <figure class="hero-photo"><img src="/assets/images/ilian-portrait-1200.jpg" srcset="/assets/images/ilian-portrait-700.jpg 700w, /assets/images/ilian-portrait-1200.jpg 1200w" sizes="(max-width: 700px) 100vw, 48vw" width="1200" height="1200" alt="Portrait of Ilian Aigner in a dark suit" fetchpriority="high" /><figcaption><span>01 / 05</span><span>Sales · Entrepreneurship · Product</span></figcaption></figure>
-    <div class="hero-bottom"><span>Hamburg → Delaware</span><span>Scroll to explore <span aria-hidden="true">↓</span></span></div>
-  </section>
-
-  <section class="signal-band" aria-label="Selected profile highlights"><div class="shell signal-inner"><p>{profile.interviews}</p><p>Top 20 Lerner Sales Competition semi-finalist.</p><p>German · English · French</p></div></section>
-
-  <section id="work" class="shell home-section selected-work">
-    <div class="section-top"><p class="section-label">Selected work</p><a class="inline-link" href="/work/">All work <span aria-hidden="true">↗</span></a></div>
-    <div class="section-heading split-heading"><h2>From questions<br />to direction.</h2><p>Commercial thinking starts with listening. These are the settings where I’ve put that into practice.</p></div>
-    <a class="featured-project" href="/work/strk/" aria-label="Read the STRK case study">
-      <div class="project-image"><div class="logo-panel"><img src="/assets/images/strk-wordmark-light.svg" width="720" height="300" alt="Current STRK light-mode wordmark" loading="lazy" /></div><span class="project-image-note">CURRENT PROJECT / IN DEVELOPMENT</span></div>
-      <div class="project-details"><span class="project-number">01 — STRK</span><h3>Building a better coaching loop.</h3><p>A fitness coaching app in development: personalized plans, AI support for everyday guidance, and optional connected human trainer help.</p><span class="inline-link">Explore the case study <span aria-hidden="true">↗</span></span></div>
-    </a>
-    <div class="work-pair"><a href="/work/#sales-competition"><span>02 / Sales competition</span><strong>Performing under pressure.</strong><small>Top 20 Lerner semi-finalist ↗</small></a><a href="/work/#consultative-sales"><span>03 / Consultative sales</span><strong>Listening before pitching.</strong><small>Horbach internship ↗</small></a></div>
-  </section>
-
-  <section id="approach" class="approach-section"><div class="shell approach-inner"><div><p class="section-label">How I work</p><h2>Curiosity is<br /><em>commercial.</em></h2></div><div class="approach-list"><div><span>01</span><p>Ask before assuming.<small>Discovery makes the next step relevant.</small></p></div><div><span>02</span><p>Separate evidence from a hypothesis.<small>Early research is a starting point, not proof.</small></p></div><div><span>03</span><p>Make the next move useful.<small>Translate what was learned into clearer action.</small></p></div></div></div></section>
-
-  <section id="about" class="shell home-section about-teaser"><div class="section-top"><p class="section-label">Beyond the work</p><a class="inline-link" href="/about/">More about me <span aria-hidden="true">↗</span></a></div><div class="about-teaser-grid"><h2>Across cultures.<br />Across disciplines.</h2><div><p>Hamburg is home; Delaware is where I’m studying entrepreneurship and sharpening my sales craft. Coaching basketball taught me to communicate clearly, adapt to people, and help a team grow.</p><p>I’m drawn to travel, new perspectives, and the conversations that change how a problem looks.</p></div></div></section>
-
-  <section class="contact-section shell"><p class="section-label">Next conversation</p><h2>Looking for a place<br />to contribute early.</h2><div class="contact-line"><div class="email-actions"><a href={`mailto:${profile.email}`}>{profile.email} <span aria-hidden="true">↗</span></a><button type="button" id="copy-email" data-email={profile.email} aria-label="Copy email address">Copy address</button><span id="copy-status" role="status" aria-live="polite"></span></div><span>U.S. B2B sales · SDR · BDR internships</span></div></section>
-  <script>
-    const copy = document.querySelector<HTMLButtonElement>('#copy-email');
-    copy?.addEventListener('click', async () => {
-      const status = document.querySelector<HTMLElement>('#copy-status');
-      try {
-        await navigator.clipboard.writeText(copy.dataset.email ?? '');
-        if (status) status.textContent = 'Copied';
-      } catch {
-        if (status) status.textContent = 'Select the address to copy';
-      }
-    });
-  </script>
+<Base title="Ilian Aigner — B2B Sales, Customer Discovery & STRK" description="STRK co-founder. Top 20 Lerner Sales Competition semi-finalist. University of Delaware student seeking U.S. B2B sales, SDR, and BDR internships." kind="home">
+<section class="home-hero story-hero shell" aria-labelledby="hero-title">
+ <div class="hero-copy">
+  <p class="hero-kicker">Hamburg to Delaware. Building what comes next.</p>
+  <h1 id="hero-title">Ilian<br /><span>Aigner.</span></h1>
+  <p class="hero-statement">I’m not learning sales casually.</p>
+  <p class="hero-intro">I’m aiming to become exceptional at it. I’m building STRK, studying entrepreneurship at Delaware, and looking for a U.S. B2B sales, SDR, or BDR internship where I can put that ambition to work.</p>
+  <div class="action-row"><a class="button button-primary" href="#story">Get to know me ↓</a><a class="button button-outline" href="/ilian-aigner-cv.pdf" download>Download CV ↓</a></div>
+ </div>
+ <figure class="hero-photo"><img src="/assets/images/ilian-portrait-1200.jpg" srcset="/assets/images/ilian-portrait-700.jpg 700w, /assets/images/ilian-portrait-1200.jpg 1200w" sizes="(max-width: 760px) 100vw, 55vw" width="1200" height="1200" alt="Ilian Aigner in a dark suit" fetchpriority="high" /><figcaption>Entrepreneurship student. STRK co-founder.</figcaption></figure>
+ <div class="hero-bottom"><span>University of Delaware · Expected Fall 2028</span><a href="/work/">Explore my work ↗</a></div>
+</section>
+<section class="story-opening shell" id="story"><p class="section-label">The ambition has a starting point.</p><h2>Before the pitch,<br />there’s a person.</h2><p>I’ve coached young athletes, worked with prospective clients, and helped turn customer conversations into a startup direction. Different settings. The same challenge: understand who’s in front of you, communicate clearly, and earn the next step.</p></section>
+<div class="story-journey shell" id="approach">
+ <aside class="journey-spine" aria-label="My story"><span>Where I started</span><div aria-hidden="true"></div><span>What I’m building</span></aside>
+ <div class="journey-chapters">
+  <section class="story-chapter" id="about"><p class="chapter-place">Hamburg · 2022–2025</p><h2>First, learn<br />to lead.</h2><div class="chapter-copy"><p>My first lessons in communication came on a basketball court. At Walddörfer SV, I coached children and teenagers, built individual development plans, and worked with players one-on-one.</p><p>A six-year-old and a sixteen-year-old don’t need the same explanation. Coaching made that impossible to ignore.</p><a class="inline-link" href="/about/">More about me</a></div></section>
+  <section class="story-chapter competition-chapter"><p class="chapter-place">Delaware · 2026</p><h2>Then, put it<br />under pressure.</h2><div class="competition-proof"><strong>Top 20</strong><span>Semi-finalist<br />Lerner Sales Competition · 122 participants</span></div><div class="chapter-copy"><p>I took on a simulated sales role presenting an oncology-focused solution. No medical background. A complex offer. A conversation that had to make sense to the client.</p><p>I learned the subject, prepared the pitch, and advanced to the semi-finals. It pushed me to turn technical information into business value—and think clearly under pressure.</p><a class="inline-link" href="/work/#sales-competition">The competition</a></div></section>
+  <section class="story-chapter"><p class="chapter-place">Hamburg · Summer 2026</p><h2>Take it into<br />client conversations.</h2><div class="chapter-copy"><p>At Horbach, I supported lead qualification and appointment setting, and shadowed senior advisors in needs-based financial planning conversations.</p><p>The lesson I’m taking into B2B sales: understand the client’s priorities before deciding what to recommend.</p><a class="inline-link" href="/experience/">My experience</a></div></section>
+ </div>
+</div>
+<section id="work" class="founder-story shell"><div class="founder-heading"><p class="chapter-place">Now · Co-founder at STRK</p><h2>A class project<br />became a commitment.</h2></div><div class="founder-grid"><div class="founder-copy"><p>STRK started with classroom interviews and business model canvases. I kept working on the questions beyond the assignment.</p><p>{profile.interviews} My contribution included interview synthesis, business model work, and positioning as the idea evolved.</p><p>Today, we’re developing and testing a fitness coaching app with personalized plans, everyday AI guidance, and optional human trainer support. The early research shaped our direction; the current experience is what we’re testing next.</p><a class="button button-primary" href="/work/strk/">Inside STRK ↗</a></div><a class="strk-art" href="/work/strk/" aria-label="Read the STRK case study"><div class="logo-panel"><img src="/assets/images/strk-wordmark-light.svg" width="720" height="300" alt="STRK light-mode wordmark" loading="lazy" /></div><span>In development. Built around real questions.</span></a></div></section>
+<section class="personal-note shell"><p class="section-label">Off the clock</p><h2>There’s more<br />than the résumé.</h2><div><p>Basketball. Travel. A conversation in German, English, or French. I like getting beyond the familiar—and finding something I hadn’t considered.</p><p>Hamburg is home. Delaware is the chapter I’m in now.</p><a class="inline-link" href="/about/">Meet the person behind the work</a></div></section>
+<section id="contact" class="contact-section shell"><p class="section-label">U.S. B2B sales · SDR · BDR internships</p><h2>I want to get good.<br />Let’s get to work.</h2><p class="contact-intro">If your team values preparation, direct feedback, and someone who takes the work seriously, let’s talk.</p><div class="contact-choices"><a href={`mailto:${profile.email}`}><span>Email me</span><strong>{profile.email}</strong><b aria-hidden="true">↗</b></a><a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><span>Connect on LinkedIn</span><strong>Start with a conversation</strong><b aria-hidden="true">↗</b></a></div><button class="copy-address" type="button" id="copy-email" data-email={profile.email}>Copy email address</button><span id="copy-status" role="status" aria-live="polite"></span></section>
+<script>
+const copy = document.querySelector<HTMLButtonElement>('#copy-email');
+copy?.addEventListener('click', async () => {
+ const status = document.querySelector<HTMLElement>('#copy-status');
+ try { await navigator.clipboard.writeText(copy.dataset.email ?? ''); if (status) status.textContent = 'Email address copied'; }
+ catch { if (status) status.textContent = 'Please select the address above to copy it'; }
+});
+</script>
 </Base>

@@ -12,6 +12,7 @@ for (const route of routes) {
   if (!/<h1\b/.test(html)) throw new Error(`Missing h1: ${route}`);
   if (!/rel="canonical"/.test(html)) throw new Error(`Missing canonical: ${route}`);
   if (!/application\/ld\+json/.test(html)) throw new Error(`Missing structured data: ${route}`);
+  if (!html.includes('class="contact-picker"') || !html.includes('mailto:ilianaigner@gmail.com') || !html.includes('https://www.linkedin.com/in/ilianaigner/')) throw new Error(`Missing contact choices: ${route}`);
   for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const raw = match[1].replaceAll('&amp;', '&');
     if (/^(mailto:|data:|javascript:)/.test(raw)) continue;
@@ -34,6 +35,8 @@ for (const item of ['404.html', 'robots.txt', 'sitemap-index.xml', 'ilian-aigner
 const home = fs.readFileSync(htmlFor('/'), 'utf8');
 const experience = fs.readFileSync(htmlFor('/experience/'), 'utf8');
 const cv = fs.readFileSync(htmlFor('/cv/'), 'utf8');
+if (!cv.includes('Open PDF') || !cv.includes('href="/ilian-aigner-cv.pdf"')) throw new Error('CV must expose the generated PDF');
+if (!home.includes('team discovery effort spanning 80+')) throw new Error('Interview count must be attributed to the team');
 for (const [name, text] of [['home', home], ['experience', experience], ['cv', cv]]) {
   if (!text.includes('Fall 2028')) throw new Error(`${name}: wrong graduation date`);
   if (!text.includes('80+')) throw new Error(`${name}: missing team discovery figure`);
