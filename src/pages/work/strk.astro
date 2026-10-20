@@ -5,8 +5,29 @@ import { Content as STRKStory } from '../../content/strk.md';
 ---
 <Base title="STRK Case Study — Ilian Aigner" description="How Ilian Aigner's classroom customer discovery and business model work evolved into STRK, a fitness coaching app in development and testing.">
   <header class="page-hero shell"><p class="section-label">Case study / STRK</p><h1>From discovery<br />to direction<span style="color:#329DB4">.</span></h1><p>A fitness coaching concept evolving through research, positioning, product decisions, and continuing tests.</p></header>
-  <section class="content-section shell"><div class="brand-showcase"><img src="/assets/images/strk-wordmark-light.svg" width="720" height="300" alt="STRK light-mode wordmark" /></div></section>
-  <section class="content-section shell two-column"><div><p class="eyebrow-number">The context</p><h2>Built through questions.</h2></div><div class="case-story"><STRKStory /></div></section>
+  <section class="strk-brand shell" aria-label="STRK brand and current status"><div class="brand-showcase"><img src="/assets/images/strk-wordmark-light.svg" width="720" height="300" alt="STRK light-mode wordmark" /></div><div class="strk-status"><span>Current status</span><strong>In development and testing</strong><p>A proposed coaching experience, not a launched app.</p></div></section>
+  <section class="strk-origin shell" aria-labelledby="origin-heading"><div class="strk-origin-heading"><p class="eyebrow-number">The origin</p><h2 id="origin-heading">Built through questions.</h2></div><div class="case-story"><STRKStory /></div><aside class="strk-research-note" aria-label="Customer discovery context"><strong>80+</strong><div><h3>Customer interviews across the team’s discovery effort.</h3><p>The earliest conversations concerned an earlier concept. They helped shape the direction; they do not validate the current app.</p></div></aside></section>
   <section class="content-section shell"><div class="two-column"><div><p class="eyebrow-number">Proposed experience</p><h2>The coaching loop.</h2></div><div><p>STRK is being developed around a repeating cycle: start with a goal, follow a plan, record what happened, and use feedback to decide what changes next.</p></div></div><figure class="coaching-map" aria-labelledby="coaching-caption"><ol class="coaching-steps"><li><span>01 / Start</span><strong>Set a goal</strong><small>Clarify what the person wants to work toward.</small></li><li><span>02 / Plan</span><strong>Follow a plan</strong><small>Make the next steps personal and practical.</small></li><li><span>03 / Record</span><strong>Log activity</strong><small>Capture what happened and how it felt.</small></li><li><span>04 / Adapt</span><strong>Adjust with feedback</strong><small>Use new context to shape future plans.</small></li></ol><div class="coaching-support"><div><span>Across the loop</span><h3>AI for everyday guidance</h3><p>Help people understand and act on their plan between check-ins.</p></div><div><span>When connected</span><h3>Optional human trainer</h3><p>Provide contextual support, review activity, and help change future plans.</p></div></div><figcaption id="coaching-caption">Concept diagram showing the proposed experience. It does not represent released screens or validated outcomes.</figcaption></figure></section>
   <section class="content-section shell two-column"><div><p class="eyebrow-number">Next questions</p><h2>What still needs proof.</h2></div><div><p>We’re developing and testing the experience with trainers and clients. The open questions include how useful AI guidance feels in daily practice, when people want a human trainer involved, and whether the coaching loop helps people follow and adapt their plans.</p><p>Commercial assumptions, outcomes, and trainer workflows remain hypotheses until tested.</p><a class="inline-link" href={profile.strk} target="_blank" rel="noopener noreferrer">Visit STRK <span aria-hidden="true">↗</span></a></div></section>
+  <script>
+    const steps = document.querySelector<HTMLElement>('.coaching-steps');
+    if (steps) {
+      const motion = window.matchMedia('(min-width: 761px) and (prefers-reduced-motion: no-preference)');
+      let queued = false;
+      const update = () => {
+        queued = false;
+        if (!motion.matches) { steps.style.removeProperty('--coaching-progress'); return; }
+        const top = window.scrollY + steps.getBoundingClientRect().top;
+        const start = top - window.innerHeight * .85;
+        const end = top - window.innerHeight * .35;
+        const progress = Math.min(1, Math.max(0, (window.scrollY - start) / (end - start)));
+        steps.style.setProperty('--coaching-progress', String(progress));
+      };
+      const schedule = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
+      window.addEventListener('scroll', schedule, { passive: true });
+      window.addEventListener('resize', schedule);
+      motion.addEventListener('change', schedule);
+      update();
+    }
+  </script>
 </Base>
