@@ -270,6 +270,17 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .work-feature{border-top:1px solid var(--line);padding-top:44px}
 .work-feature-copy{padding-top:0}
 @media(max-width:760px){.work-hero{display:block;min-height:0;padding:48px 0 35px}.work-hero h1{font-size:clamp(60px,12.5vw,80px);margin:20px 0 24px}.work-hero-copy>p:last-child{font-size:17px}.work-hero-brand{min-height:270px;margin-top:37px;padding:30px 18px;gap:23px}.work-hero-brand img,.work-hero-brand span{width:min(100%,360px)}.work-feature{padding-top:36px}.work-feature-copy{padding-top:0}}
+/* The work page closes with an application path, not another project preview. */
+.work-close{display:grid;grid-template-columns:1.1fr .9fr;gap:8vw;align-items:end;border-top:1px solid var(--amber);padding-top:75px;padding-bottom:130px}
+.work-close .section-label{margin-bottom:30px}
+.work-close h2{font-size:clamp(56px,6.2vw,90px);margin:0}
+.work-close-action{max-width:580px}
+.work-close-action p{font-size:19px;line-height:1.7;margin:0 0 30px}
+.work-close-action>div{display:flex;gap:12px;flex-wrap:wrap}
+.work-close-action .button{min-width:185px}
+@media(max-width:900px){.work-close{display:block}.work-close h2{max-width:650px;margin-bottom:35px}.work-close-action{max-width:620px}}
+@media(max-width:760px){.work-close{display:block;padding:55px 0 95px}.work-close .section-label{margin-bottom:22px}.work-close h2{font-size:clamp(51px,12vw,70px);margin-bottom:29px}.work-close-action p{font-size:16px;line-height:1.75}.work-close-action>div{display:grid;grid-template-columns:1fr 1fr}.work-close-action .button{min-width:0;gap:8px}}
+@media(max-width:390px){.work-close-action>div{grid-template-columns:1fr}}
 /* About begins with a concrete lesson from coaching before returning to sales. */
 .about-origin{border-top-color:#806448}
 .about-age-lesson{display:grid;grid-template-columns:minmax(210px,.78fr) minmax(0,1fr);gap:35px;align-items:center;max-width:800px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0;margin:35px 0 30px}
