@@ -46,6 +46,14 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 /* On narrow screens the story still has a fixed side: a quiet progress rail. */
 @media(max-width:760px){.story-journey{display:grid;grid-template-columns:19px minmax(0,1fr);gap:18px}.journey-spine{display:flex;top:84px;height:min(57svh,430px);max-height:none;min-width:0;gap:0;align-items:center}.journey-spine .journey-endpoint,.journey-spine .journey-current{display:none}.journey-spine>.journey-track{width:2px;margin:0;min-height:0}.journey-marker{width:12px;height:12px}.journey-chapters{min-width:0}.story-chapter{padding-top:45px}}
 /* Three distinct acts on the work page: a brand, a result, and a principle. */
+.work-chapter-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.work-chapter-nav a{display:flex;align-items:center;gap:17px;min-height:78px;padding:16px 20px 16px 0;transition:color .2s}
+.work-chapter-nav a+a{border-left:1px solid var(--line);padding-left:25px}
+.work-chapter-nav a:hover{color:var(--amber)}
+.work-chapter-nav span{font-size:12px;font-weight:700;color:var(--amber)}
+.work-chapter-nav strong{font:600 clamp(17px,1.7vw,23px)/1.2 Archivo,Arial,sans-serif;letter-spacing:-.035em}
+#strk,#sales-competition,#consultative-sales{scroll-margin-top:28px}
+@media(max-width:760px){.work-chapter-nav{display:block}.work-chapter-nav a{min-height:48px;padding:9px 0}.work-chapter-nav a+a{border-left:0;border-top:1px solid var(--line);padding-left:0}.work-chapter-nav strong{font-size:18px}}
 .work-feature{padding:72px 0 85px}
 .work-feature .brand-showcase{min-height:430px}
 .work-feature-copy{display:grid;grid-template-columns:.7fr 1.3fr;gap:7vw;padding-top:52px;align-items:start}
