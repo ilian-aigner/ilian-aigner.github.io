@@ -441,3 +441,7 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
   .not-found-copy h1{font-size:clamp(48px,12vw,66px)}
   .not-found-copy>p:not(.section-label){font-size:16px}
 }
+/* Editorial links stay light visually while meeting a comfortable tap height. */
+@media(max-width:760px){
+  a.inline-link{display:inline-flex;align-items:center;min-height:44px;padding:10px 0;font-size:14px}
+}
