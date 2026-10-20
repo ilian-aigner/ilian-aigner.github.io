@@ -36,7 +36,11 @@ import { Content as STRKStory } from '../../content/strk.md';
       let queued = false;
       const updateChapters = () => {
         queued = false;
-        if (onward) chapterNav.classList.toggle('is-past-story', onward.getBoundingClientRect().top <= window.innerHeight * .55);
+        if (onward) {
+          const pastStory = onward.getBoundingClientRect().top <= window.innerHeight - 140;
+          chapterNav.classList.toggle('is-past-story', pastStory);
+          chapterNav.inert = pastStory;
+        }
         const readingLine = Math.min(260, window.innerHeight * .34);
         const active = [...chapterHeadings].reverse().find(heading => heading.getBoundingClientRect().top <= readingLine) ?? chapterHeadings[0];
         if (active.id === activeId) return;
