@@ -188,6 +188,23 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .experience-proof-grid>div:last-child strong{font-size:clamp(38px,4.3vw,61px);color:var(--text)}
 .experience-proof-grid>div:last-child p{max-width:360px}
 @media(max-width:760px){.experience-hero{padding-top:55px;padding-bottom:25px}.experience-hero h1{font-size:clamp(61px,12vw,80px)}.experience-history{padding-top:36px}.education-band{padding:48px 0;margin-bottom:75px}.experience-proof-grid{grid-template-columns:1fr;gap:5px}.experience-proof-grid>div:first-child strong{font-size:clamp(70px,18vw,90px)}.experience-proof-grid>div:last-child strong{font-size:clamp(42px,11vw,58px)}}
+/* Put the chronology, not a second display headline, within the first screen. */
+.experience-hero{padding-top:58px;padding-bottom:25px}
+.experience-hero h1{font-size:clamp(68px,7.4vw,106px);margin-bottom:18px}
+.experience-history{padding-top:32px}
+.experience-history-intro{align-items:center}
+.experience-history-intro h2{font-size:clamp(42px,4.6vw,64px)}
+.experience-history .career-list{margin-top:35px}
+.career-list li:before{transition:background-color .25s ease,box-shadow .25s ease}
+.career-list li.is-active:before{background:var(--amber);box-shadow:0 0 0 6px #d1a36c22}
+.career-list li:first-child.is-active:before{background:var(--blue);box-shadow:0 0 0 6px #329db422}
+@media(max-width:760px){
+  .experience-hero{padding-top:45px;padding-bottom:17px}
+  .experience-hero h1{font-size:clamp(57px,11vw,72px)}
+  .experience-history{padding-top:27px}
+  .experience-history-intro h2{font-size:clamp(38px,9vw,48px);margin:15px 0 0}
+  .experience-history .career-list{margin-top:26px}
+}
 /* The discovery heading stays alongside its evidence, and the proposed cycle visibly returns. */
 .strk-origin-heading{position:sticky;top:95px;align-self:start}
 .coaching-steps:after{content:"";position:absolute;right:5px;top:5px;bottom:-34px;width:1px;background:var(--blue)}
