@@ -543,3 +543,14 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 @media(max-width:760px){.strk-turn{margin-top:0;padding:65px 0 75px}.strk-turn-inner{display:block}.strk-turn-before{max-width:none}.strk-turn-before p{max-width:310px}.strk-turn-direction{font-size:56px;text-align:left;transform:none;margin:24px 0 12px}.strk-turn-now h2{font-size:clamp(46px,10.5vw,70px);margin-bottom:24px}.strk-turn-now p{font-size:15px}}
 /* A CV-to-contact deep link should reveal both choices at once. */
 #contact-choices{scroll-margin-top:clamp(95px,14svh,150px)}
+/* Same-origin pages read as chapters of one portfolio. Browsers without
+   cross-document view transitions keep ordinary navigation. */
+@media(prefers-reduced-motion:no-preference){
+  @view-transition{navigation:auto}
+  .site-header{view-transition-name:portfolio-header}
+  main{view-transition-name:portfolio-content}
+  ::view-transition-old(portfolio-content){animation:.14s ease-out both portfolio-leave}
+  ::view-transition-new(portfolio-content){animation:.24s ease-out both portfolio-enter}
+}
+@keyframes portfolio-leave{to{opacity:0}}
+@keyframes portfolio-enter{from{opacity:0}}
