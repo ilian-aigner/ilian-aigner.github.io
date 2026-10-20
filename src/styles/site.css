@@ -259,3 +259,9 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .strk-case-brief a{display:inline-flex;align-items:center;gap:20px;color:var(--blue);font-size:14px;font-weight:700;border-bottom:1px solid var(--blue);padding-bottom:6px}
 .strk-case-brief a:hover{color:#78c5d6}
 @media(max-width:760px){.strk-case-hero{display:block;min-height:0;padding:65px 0 55px}.strk-case-hero h1{font-size:clamp(58px,12.5vw,86px)}.strk-case-brief{margin-top:55px;padding-top:22px}.strk-case-brief .strk-case-lede{font-size:clamp(27px,7.6vw,37px)}.strk-case-brief p:not(.strk-case-lede){font-size:15px}}
+/* On small screens, let the portrait enter the first view without obscuring the pitch. */
+@media(max-width:760px){
+  .story-hero .hero-copy{padding-top:28px}
+  .story-hero .hero-kicker{margin-bottom:18px;font-size:12px;font-weight:700}
+  .story-hero h1{margin-bottom:20px}
+}
