@@ -347,13 +347,14 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 /* Give the personal details their own pause instead of burying them in the coaching copy. */
 .about-personal-pause{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:7vw;align-items:end;border-top:1px solid #806448;border-bottom:1px solid var(--line);padding:85px 0 92px}
 .about-personal-pause .section-label{margin-bottom:35px}
-.about-personal-pause h2{font-size:clamp(53px,6vw,90px);line-height:.98;margin:0;max-width:850px}
+.about-personal-pause h2{font-size:clamp(52px,5vw,72px);line-height:1.02;margin:0;max-width:850px}
 .about-personal-copy{max-width:490px;padding-bottom:4px}
 .about-personal-copy p{font-size:18px;line-height:1.8;margin:0 0 38px}
 .about-personal-copy ul{display:flex;flex-wrap:wrap;gap:12px 22px;list-style:none;margin:0;padding:17px 0 0;border-top:1px solid var(--line)}
-.about-personal-copy li{color:var(--text);font:600 15px/1.4 Archivo,Arial,sans-serif;letter-spacing:-.02em}
+.about-personal-copy li{color:var(--text);font:600 clamp(16px,1.45vw,21px)/1.4 Archivo,Arial,sans-serif;letter-spacing:-.02em}
 .about-personal-copy li+li:before{content:"/";color:var(--amber);margin-right:22px;font-weight:400}
 .about-personal-pause+.about-proof{border-top:0}
+@media(min-width:761px) and (max-width:900px){.about-personal-pause h2{font-size:44px}}
 @media(max-width:760px){.about-personal-pause{display:block;padding:58px 0 65px}.about-personal-pause .section-label{margin-bottom:25px}.about-personal-pause h2{font-size:clamp(42px,10vw,65px);margin-bottom:32px}.about-personal-copy p{font-size:16px;margin-bottom:25px}.about-personal-copy ul{gap:10px 14px}.about-personal-copy li{font-size:14px}.about-personal-copy li+li:before{margin-right:14px}}
 /* The sticky journey resolves at STRK instead of ending before the final chapter. */
 .story-journey .founder-story{max-width:none;border-top:1px solid var(--line);padding:90px 0 125px}
