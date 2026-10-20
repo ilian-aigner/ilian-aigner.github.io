@@ -127,3 +127,24 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .strk-research-note h3{font-size:clamp(27px,3vw,43px);max-width:620px;margin:0 0 17px}
 .strk-research-note p{font-size:14px;line-height:1.7;max-width:590px;margin:0}
 @media(max-width:760px){.strk-brand{padding-top:10px}.strk-status{grid-template-columns:1fr;gap:7px;padding:20px 0}.strk-status strong{font-size:15px}.strk-origin{display:block;padding:68px 0 15px}.strk-origin-heading h2{font-size:clamp(48px,11vw,70px);margin-bottom:42px}.case-story p{font-size:16px}.strk-research-note{display:block;margin-top:55px;padding:25px 0 35px}.strk-research-note>strong{display:block;font-size:clamp(90px,24vw,130px);margin-bottom:15px}.strk-research-note h3{font-size:clamp(27px,7vw,37px)}}
+/* Keep the résumé in view while its reading, download, and print actions stay at hand. */
+.cv-stage{display:grid;grid-template-columns:minmax(250px,310px) minmax(0,1fr);gap:clamp(32px,4vw,70px);align-items:start;padding-top:75px;padding-bottom:130px}
+.cv-guide-inner{position:sticky;top:35px}
+.cv-guide .section-label{color:var(--amber);margin-bottom:28px}
+.cv-guide h1{font-size:clamp(60px,5.4vw,86px);margin:0 0 32px}
+.cv-lede{font-size:16px;line-height:1.75;max-width:310px;margin-bottom:40px}
+.cv-actions{display:grid;gap:10px;margin:0}
+.cv-actions .button{width:100%;min-height:51px;text-align:left;cursor:pointer}
+.cv-actions .button-outline{background:transparent;color:var(--text)}
+.cv-format{font-size:11px;color:#9199a3;margin:24px 0 0}
+.cv-stage .resume{min-width:0;padding:clamp(35px,4vw,65px);box-shadow:0 30px 70px #0004}
+.cv-stage .resume h2{font-size:clamp(36px,3.1vw,47px)}
+.cv-stage .resume p,.cv-stage .resume li,.cv-stage .resume-row{font-size:13px;line-height:1.55}
+.cv-stage .resume .resume-contact{font-size:12px}
+.cv-stage .resume-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:baseline}
+.cv-stage .resume-row span{white-space:nowrap}
+.cv-stage .resume-role{margin-bottom:19px}
+@media(max-width:1100px){.cv-stage{display:block;max-width:850px;padding-top:50px}.cv-guide-inner{position:static}.cv-guide h1{font-size:clamp(60px,9vw,90px);margin-bottom:20px}.cv-lede{max-width:650px;margin-bottom:25px}.cv-actions{display:flex;flex-wrap:wrap;margin-bottom:15px}.cv-actions .button{width:auto}.cv-format{margin:0 0 40px}}
+@media(max-width:760px){.cv-stage{padding-top:42px;padding-bottom:75px}.cv-guide h1{font-size:clamp(58px,13vw,82px)}.cv-lede{font-size:15px}.cv-actions{display:grid;grid-template-columns:1fr 1fr}.cv-actions .button{width:100%;min-width:0;gap:8px}.cv-actions .button:first-child{grid-column:1/-1}.cv-stage .resume{padding:32px 25px}.cv-stage .resume p,.cv-stage .resume li,.cv-stage .resume-row{font-size:13px;line-height:1.55}.cv-stage .resume-row{display:block}.cv-stage .resume-row strong,.cv-stage .resume-row span{display:block}.cv-stage .resume-row span{white-space:normal;margin-top:3px;color:#5C626A}.cv-stage .resume-role{margin-bottom:23px}}
+@media(max-width:430px){.cv-actions{grid-template-columns:1fr}.cv-actions .button:first-child{grid-column:auto}.cv-stage .resume{padding:28px 22px}.cv-stage .resume h2{font-size:36px}}
+@media print{.cv-stage{display:block;width:100%;max-width:none;padding:0}.cv-guide,.next-chapter{display:none!important}.cv-stage .resume{padding:0;box-shadow:none}.cv-stage .resume h2{font-size:30px}.cv-stage .resume p,.cv-stage .resume li,.cv-stage .resume-row{font-size:10px;line-height:1.4}.cv-stage .resume .resume-contact{font-size:10px}.cv-stage .resume-row{display:flex}.cv-stage .resume-row span{white-space:nowrap}.cv-stage .resume-role{margin-bottom:0}}
