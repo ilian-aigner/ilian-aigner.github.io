@@ -213,7 +213,8 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .experience-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);column-gap:6vw;align-items:end;padding-top:52px;padding-bottom:18px}
 .experience-hero .section-label{grid-column:1/-1;margin-bottom:23px}
 .experience-hero h1{font-size:clamp(68px,7.4vw,106px);margin-bottom:0}
-.experience-hero>p:last-child{max-width:440px;border-left:1px solid var(--amber);padding-left:20px;margin-bottom:8px}
+.experience-hero .experience-hero-intro{max-width:440px;border-left:1px solid var(--amber);padding-left:20px;margin-bottom:8px;font-size:clamp(18px,2vw,26px);line-height:1.5}
+.experience-hero .experience-hero-cv{grid-column:2;justify-self:start;margin-top:10px;font-size:13px}
 .experience-history{padding-top:32px}
 .experience-history-intro{align-items:center}
 .experience-history-intro h2{font-size:clamp(42px,4.6vw,64px)}
@@ -224,7 +225,8 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 @media(max-width:760px){
   .experience-hero{display:block;padding-top:45px;padding-bottom:17px}
   .experience-hero h1{font-size:clamp(57px,11vw,72px);margin-bottom:22px}
-  .experience-hero>p:last-child{border-left:0;padding-left:0;margin-bottom:0}
+  .experience-hero .experience-hero-intro{border-left:0;padding-left:0;margin-bottom:0}
+  .experience-hero .experience-hero-cv{display:inline-block;margin-top:21px}
   .experience-history{padding-top:27px}
   .experience-history-intro h2{font-size:clamp(38px,9vw,48px);margin:15px 0 0}
   .experience-history .career-list{margin-top:26px}
