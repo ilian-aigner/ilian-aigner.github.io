@@ -244,8 +244,14 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 @media(max-width:760px){.work-hero{display:block;min-height:0;padding:48px 0 35px}.work-hero h1{font-size:clamp(60px,12.5vw,80px);margin:20px 0 24px}.work-hero-copy>p:last-child{font-size:17px}.work-hero-brand{min-height:270px;margin-top:37px;padding:30px 18px;gap:23px}.work-hero-brand img,.work-hero-brand span{width:min(100%,360px)}.work-feature{padding-top:36px}.work-feature-copy{padding-top:0}}
 /* About begins with a concrete lesson from coaching before returning to sales. */
 .about-origin{border-top-color:#806448}
-.about-chapter p.about-origin-line{font:600 clamp(28px,3vw,43px)/1.25 Archivo,Arial,sans-serif;letter-spacing:-.04em;color:var(--text);max-width:800px;border-left:2px solid var(--amber);padding-left:23px;margin:38px 0 28px}
-@media(max-width:760px){.about-chapter p.about-origin-line{font-size:clamp(27px,7vw,34px);padding-left:16px;margin:29px 0 25px}}
+.about-age-lesson{display:grid;grid-template-columns:minmax(210px,.78fr) minmax(0,1fr);gap:35px;align-items:center;max-width:800px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0;margin:35px 0 30px}
+.about-age-pair{display:flex;align-items:baseline;gap:15px;white-space:nowrap}
+.about-age-pair strong{font:600 clamp(70px,7vw,112px)/.85 Archivo,Arial,sans-serif;letter-spacing:-.09em;color:var(--text)}
+.about-age-pair strong:last-child{color:var(--amber)}
+.about-age-pair span{align-self:center;width:28px;height:1px;background:var(--amber)}
+.about-age-lesson figcaption{font:600 clamp(23px,2.5vw,35px)/1.22 Archivo,Arial,sans-serif;letter-spacing:-.045em;color:var(--text)}
+@media(max-width:900px){.about-age-lesson{display:block}.about-age-pair{margin-bottom:22px}}
+@media(max-width:760px){.about-age-lesson{margin:29px 0 26px;padding:22px 0}.about-age-pair{gap:20px}.about-age-pair strong{font-size:clamp(66px,20vw,90px)}.about-age-lesson figcaption{font-size:clamp(27px,7vw,34px)}}
 /* The sticky journey resolves at STRK instead of ending before the final chapter. */
 .story-journey .founder-story{max-width:none;border-top:1px solid var(--line);padding:90px 0 125px}
 .story-journey .founder-heading h2{font-size:clamp(53px,5.2vw,78px);margin-bottom:44px}
