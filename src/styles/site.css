@@ -288,3 +288,7 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
   .about-hero-photo img{transform:scale(1.06)}
   .about-hero-photo figcaption{left:18px;bottom:15px;font-size:11px}
 }
+/* Keep the portrait integrated without putting its shoulder behind tablet copy. */
+@media(min-width:761px) and (max-width:900px){
+  .story-hero .hero-photo>img{mask-image:linear-gradient(to right,transparent 0%,transparent 8%,#000 39%,#000 92%,transparent 100%)}
+}
