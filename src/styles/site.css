@@ -216,6 +216,7 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 @media(max-width:1100px){.about-hero{min-height:0}.about-hero h1{font-size:clamp(64px,7.7vw,100px)}.about-hero-photo{height:540px}}
 @media(max-width:760px){.about-hero{display:block;padding-block:55px 35px}.about-hero-copy .section-label{margin-bottom:28px}.about-hero h1{font-size:clamp(59px,12.5vw,85px);margin-bottom:27px}.about-hero-copy>p:last-of-type{font-size:18px;max-width:600px}.about-hero-photo{height:min(118vw,600px)}.about-story{padding-bottom:35px}.about-chapter{display:block;padding:45px 0 66px}.about-chapter .section-label{margin:0 0 24px}.about-chapter h2{font-size:clamp(44px,10vw,65px);margin-bottom:25px}.about-chapter p:not(.section-label){font-size:16px}.about-next{display:block;padding:55px 0 90px}.about-next h2{font-size:clamp(48px,11vw,70px);margin-bottom:28px}.about-next>div:last-child p{font-size:17px}}
 @media(max-width:430px){.about-hero h1{font-size:clamp(56px,12vw,64px)}.about-hero-photo{height:410px}.about-chapter h2{font-size:clamp(42px,10.5vw,50px)}}
+@media(max-width:350px){.about-hero h1{font-size:clamp(42px,13.2vw,47px)}}
 @media(max-width:760px){.about-hero-links{gap:20px;margin-top:26px;margin-bottom:36px}.about-hero-links a{font-size:12px;gap:12px}}
 .about-delaware>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.9fr);gap:clamp(30px,5vw,75px);align-items:end}
 .about-delaware h2{margin-bottom:0}
