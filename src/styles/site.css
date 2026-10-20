@@ -484,3 +484,5 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 }
 /* Keep the case-study title in three intentional lines on the narrowest phones. */
 @media(max-width:350px){.strk-case-hero h1{font-size:52px}}
+/* A CV-to-contact deep link should reveal both choices at once. */
+#contact-choices{scroll-margin-top:clamp(95px,14svh,150px)}
