@@ -11,9 +11,13 @@ import profile from '../data/profile.json';
         <p class="cv-lede">A quick read for U.S. B2B sales, SDR, and BDR teams. The experience below is the same content as the downloadable PDF.</p>
         <nav class="cv-actions" aria-label="Résumé actions">
           <a class="button button-primary" href="/ilian-aigner-cv.pdf" download>Download PDF <span aria-hidden="true">↓</span></a>
-          <a class="button button-outline" href="/ilian-aigner-cv.pdf" target="_blank" rel="noopener">Open PDF in new tab <span aria-hidden="true">↗</span></a>
-          <button class="button button-outline" type="button" onclick="window.print()">Print this page <span aria-hidden="true">↗</span></button>
+          <a class="button button-outline" href={`mailto:${profile.email}`}>Email me <span aria-hidden="true">↗</span></a>
         </nav>
+        <div class="cv-utilities" aria-label="More résumé options">
+          <a href="/ilian-aigner-cv.pdf" target="_blank" rel="noopener">Preview the PDF <span aria-hidden="true">↗</span></a>
+          <button type="button" onclick="window.print()">Print this page <span aria-hidden="true">↗</span></button>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
         <p class="cv-format">One page · Selectable text · Letter size</p>
       </div>
     </aside>
