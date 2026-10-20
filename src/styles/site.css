@@ -232,3 +232,13 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .story-journey .strk-art .logo-panel{width:100%}
 @media(min-width:761px) and (max-width:900px){.story-journey .founder-grid{display:flex;flex-direction:column-reverse;gap:25px}.story-journey .founder-copy{max-width:540px}.story-journey .strk-art{width:100%;min-height:260px}.story-journey .strk-art .logo-panel{width:min(80%,390px)}}
 @media(max-width:760px){.story-journey .founder-story{padding:65px 0 80px}.story-journey .founder-heading h2{font-size:clamp(43px,10vw,62px);margin-bottom:30px}.story-journey .strk-art{min-height:240px}.story-journey .strk-art .logo-panel{width:min(85%,390px)}}
+/* Introduce the founder's contribution before the wordmark takes the stage. */
+.strk-case-hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:6vw;align-items:end;min-height:600px;padding:85px 0 90px}
+.strk-case-hero h1{font-size:clamp(66px,6.9vw,100px);margin:26px 0 0}
+.strk-case-period{color:var(--blue)}
+.strk-case-brief{border-top:2px solid var(--blue);padding-top:25px;max-width:440px}
+.strk-case-brief .strk-case-lede{font:600 clamp(28px,2.75vw,40px)/1.2 Archivo,Arial,sans-serif;letter-spacing:-.045em;color:var(--text);margin-bottom:20px}
+.strk-case-brief p:not(.strk-case-lede){font-size:16px;line-height:1.75;max-width:430px;margin-bottom:27px}
+.strk-case-brief a{display:inline-flex;align-items:center;gap:20px;color:var(--blue);font-size:14px;font-weight:700;border-bottom:1px solid var(--blue);padding-bottom:6px}
+.strk-case-brief a:hover{color:#78c5d6}
+@media(max-width:760px){.strk-case-hero{display:block;min-height:0;padding:65px 0 55px}.strk-case-hero h1{font-size:clamp(58px,12.5vw,86px)}.strk-case-brief{margin-top:55px;padding-top:22px}.strk-case-brief .strk-case-lede{font-size:clamp(27px,7.6vw,37px)}.strk-case-brief p:not(.strk-case-lede){font-size:15px}}
