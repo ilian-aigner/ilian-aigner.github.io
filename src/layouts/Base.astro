@@ -60,6 +60,18 @@ const nextPage = nextPages[Astro.url.pathname];
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      // A URL opened with a fragment should land there immediately. Keep smooth
+      // scrolling for links clicked after the page has loaded.
+      if (location.hash) {
+        document.documentElement.style.scrollBehavior = 'auto';
+        addEventListener('load', () => {
+          const id = decodeURIComponent(location.hash.slice(1));
+          document.getElementById(id)?.scrollIntoView({ behavior: 'auto', block: 'start' });
+          requestAnimationFrame(() => document.documentElement.style.removeProperty('scroll-behavior'));
+        }, { once: true });
+      }
+    </script>
     <meta name="theme-color" content="#0B0E13" />
     <title>{title}</title>
     <meta name="description" content={description} />
