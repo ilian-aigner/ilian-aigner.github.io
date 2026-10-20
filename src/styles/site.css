@@ -70,3 +70,45 @@ body .story-hero .hero-photo>img,body .about-portrait{filter:none}
 .about-places-grid p{font-size:17px;line-height:1.8;max-width:460px}
 .about-aside{border-top:1px solid var(--line);padding-top:25px;font-size:14px;max-width:650px}
 @media(max-width:760px){.about-places{padding:45px 0 75px}.about-places h2{font-size:clamp(48px,11vw,70px);margin-bottom:46px}.about-places-grid{grid-template-columns:1fr;gap:0}.about-places-grid>div{padding-bottom:35px}.about-places-grid>div+div{border-top:1px solid var(--line)}.about-places-grid p{font-size:16px}.about-places-grid h3{font-size:clamp(54px,15vw,85px)}.about-aside{padding-top:23px}}
+/* A dated career route continues the visual language of the homepage story. */
+.experience-history{padding:70px 0 100px}
+.experience-history-intro{display:flex;align-items:end;justify-content:space-between;gap:45px}
+.experience-history-intro h2{font-size:clamp(53px,6vw,88px);margin:0}
+.career-list{--rail:240px;position:relative;list-style:none;margin:70px 0 0;padding:0}
+.career-list:before{content:"";position:absolute;top:48px;bottom:52px;left:var(--rail);width:1px;background:var(--line)}
+.career-list li{display:grid;grid-template-columns:var(--rail) minmax(0,1fr);position:relative;padding:26px 0 48px}
+.career-list li:before{content:"";position:absolute;left:calc(var(--rail) - 5px);top:39px;width:11px;height:11px;border:2px solid var(--amber);border-radius:50%;background:var(--bg);z-index:1}
+.career-list li:first-child:before{border-color:var(--blue)}
+.career-meta{padding-right:20px;display:flex;flex-direction:column;gap:6px}
+.career-meta strong{font-size:13px;color:var(--amber);font-weight:700}
+.career-meta span{font-size:12px;color:var(--muted)}
+.career-detail{padding-left:65px;max-width:830px}
+.career-detail h3{font-size:clamp(27px,3vw,41px);margin:0 0 7px}
+.career-org{color:var(--text);font-size:15px;margin:0 0 19px}
+.career-detail>p:not(.career-org){font-size:16px;line-height:1.8;max-width:760px}
+.career-detail .inline-link{display:inline-block;margin-top:4px}
+.education-band{display:grid;grid-template-columns:1fr 1fr;gap:7vw;background:var(--surface);padding:70px 65px;margin-bottom:110px}
+.education-band h2{font-size:clamp(51px,5.5vw,80px);margin:22px 0 26px}
+.education-date{display:inline-block;color:var(--amber);font-size:13px;border-top:1px solid #756750;padding-top:15px}
+.education-detail{align-self:end;max-width:600px}
+.education-detail h3{font-size:clamp(28px,3vw,40px);margin-bottom:30px}
+.education-detail p{font-size:16px;line-height:1.8}
+.experience-programs{display:grid;grid-template-columns:.75fr 1.25fr;gap:7vw;padding-bottom:100px}
+.experience-programs h2{font-size:clamp(48px,5vw,74px);margin:22px 0 0}
+.experience-programs ul{list-style:none;margin:0;padding:0}
+.experience-programs li{display:grid;grid-template-columns:145px 1fr;gap:22px;align-items:baseline;border-top:1px solid var(--line);padding:24px 0}
+.experience-programs li:last-child{border-bottom:1px solid var(--line)}
+.experience-programs li span{color:var(--amber);font-size:12px}
+.experience-programs li strong{font:600 clamp(19px,2.4vw,32px)/1.18 Archivo,Arial,sans-serif;letter-spacing:-.04em}
+.experience-proof{border-top:1px solid var(--line);padding:35px 0 100px}
+.experience-proof h2{font-size:clamp(52px,5.8vw,84px);margin:25px 0 65px}
+.experience-proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:7vw}
+.experience-proof-grid>div{border-top:1px solid var(--line);padding:24px 0 32px}
+.experience-proof-grid strong{font:600 clamp(45px,5.7vw,80px)/1 Archivo,Arial,sans-serif;letter-spacing:-.06em;color:var(--amber)}
+.experience-proof-grid p{font-size:15px;line-height:1.7;margin-top:20px}
+.experience-skills{border-top:1px solid var(--line);padding-top:24px;font-size:13px;line-height:1.8;max-width:1000px}
+@media(max-width:760px){.experience-history{padding:45px 0 70px}.experience-history-intro{display:block}.experience-history-intro h2{font-size:clamp(52px,11vw,72px);margin:25px 0 0}.career-list{--rail:13px;margin-top:45px}.career-list:before{top:33px;bottom:55px}.career-list li{display:block;padding:22px 0 45px 42px}.career-list li:before{top:31px}.career-meta{margin-bottom:22px}.career-detail{padding-left:0}.career-detail h3{font-size:31px}.career-detail>p:not(.career-org){font-size:15px}.education-band{display:block;padding:38px 25px;margin-bottom:75px}.education-band h2{font-size:clamp(47px,11vw,70px)}.education-detail{margin-top:40px}.education-detail h3{font-size:30px}.experience-programs{display:block;padding-bottom:70px}.experience-programs h2{font-size:clamp(47px,11vw,66px);margin-bottom:42px}.experience-programs li{grid-template-columns:1fr;gap:9px}.experience-proof{padding:25px 0 70px}.experience-proof h2{font-size:clamp(48px,11vw,70px);margin-bottom:44px}.experience-proof-grid{grid-template-columns:1fr;gap:5px}.experience-proof-grid strong{font-size:clamp(52px,14vw,78px)}}
+@media(min-width:761px) and (max-width:900px){.education-band{grid-template-columns:1fr;gap:38px;padding:50px}.education-band h2{font-size:65px}.education-detail{max-width:650px}.experience-programs{grid-template-columns:1fr;gap:32px}.experience-programs h2{margin-bottom:10px}}
+.career-list:after{content:"";position:absolute;top:48px;bottom:52px;left:var(--rail);width:1px;background:var(--amber);transform:scaleY(var(--career-progress,0));transform-origin:top}
+@media(max-width:760px){.career-list:after{top:33px;bottom:55px}}
+@media(prefers-reduced-motion:reduce){.career-list:after{transform:scaleY(1)}}
